@@ -1,0 +1,65 @@
+{
+  "brand": "CROPSEN",
+  "tagline": "Organic • Chemical-Free • No Side Effects",
+  "nav": {
+    "home": "Home",
+    "products": "Products",
+    "about": "About Us",
+    "testimonials": "Testimonials",
+    "contact": "Contact"
+  },
+  "badges": {
+    "organic": "100% Organic",
+    "chemicalFree": "Chemical-Free",
+    "noSideEffects": "No Side Effects",
+    "safeForSoil": "Safe for Soil",
+    "ecoFriendly": "Eco-Friendly"
+  },
+  "cta": {
+    "addToCart": "Add to Cart",
+    "orderWhatsapp": "Order on WhatsApp",
+    "enquiry": "Enquiry",
+    "viewDetails": "View Details",
+    "sendRTQ": "Send RTQ",
+    "continueShopping": "Continue Shopping",
+    "clearCart": "Clear Cart"
+  },
+  "home": {
+    "hero": {
+      "title": "Grow Naturally with CROPSEN",
+      "subtitle": "Premium organic plant care solutions that are chemical-free and safe for your family"
+    },
+    "why": {
+      "title": "Why Choose CROPSEN?",
+      "organic": "100% Organic Ingredients",
+      "chemicalFree": "Completely Chemical-Free",
+      "noSideEffects": "No Harmful Side Effects",
+      "ecoFriendly": "Safe for Environment"
+    },
+    "products": {
+      "title": "Our Premium Products"
+    },
+    "testimonials": {
+      "title": "What Our Customers Say"
+    },
+    "cta": {
+      "title": "Join the Organic Revolution",
+      "subtitle": "Start your journey to healthier plants today"
+    }
+  },
+  "products": {
+    "title": "Our Products",
+    "subtitle": "Premium organic solutions for all your plant care needs"
+  },
+  "cart": {
+    "title": "Your Cart",
+    "empty": "Your cart is empty",
+    "notes": "Special notes or instructions",
+    "rtqMessage": "Request to Quote"
+  },
+  "footer": {
+    "contact": "Contact Us",
+    "quickLinks": "Quick Links",
+    "followUs": "Follow Us"
+  }
+}

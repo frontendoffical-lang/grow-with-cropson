@@ -1,12 +1,177 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
+import { useAppSelector } from '@/store';
+import { selectAllProducts } from '@/store/slices/productsSlice';
+import Header from '@/components/Header';
+import CartDrawer from '@/components/CartDrawer';
+import Footer from '@/components/Footer';
+import HeroCarousel from '@/components/HeroCarousel';
+import ProductCard from '@/components/ProductCard';
+import TestimonialSlider from '@/components/TestimonialSlider';
+import { ButtonOrganic } from '@/components/ui/button-organic';
+import { Leaf, Shield, Heart, Globe, ArrowRight } from 'lucide-react';
 
 const Index = () => {
+  const { t } = useTranslation();
+  const products = useAppSelector(selectAllProducts);
+
+  const whyChooseUs = [
+    {
+      icon: Leaf,
+      title: t('home.why.organic'),
+      description: 'Made from 100% natural and organic ingredients'
+    },
+    {
+      icon: Shield,
+      title: t('home.why.chemicalFree'),
+      description: 'No synthetic chemicals or harmful additives'
+    },
+    {
+      icon: Heart,
+      title: t('home.why.noSideEffects'),
+      description: 'Safe for your family, pets, and environment'
+    },
+    {
+      icon: Globe,
+      title: t('home.why.ecoFriendly'),
+      description: 'Environmentally sustainable and responsible'
+    }
+  ];
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen bg-background">
+      <Header />
+      
+      <main>
+        {/* Hero Section */}
+        <section className="py-8 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
+            <HeroCarousel />
+          </div>
+        </section>
+
+        {/* Why Choose CROPSEN Section */}
+        <section className="py-20 bg-gradient-to-b from-primary-light to-background">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-4">
+                {t('home.why.title')}
+              </h2>
+              <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+                Our commitment to organic excellence and environmental sustainability
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {whyChooseUs.map((item, index) => {
+                const Icon = item.icon;
+                return (
+                  <div key={index} className="text-center group">
+                    <div className="w-20 h-20 bg-gradient-to-br from-primary to-success text-white rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                      <Icon className="w-10 h-10" />
+                    </div>
+                    <h3 className="text-lg font-heading font-semibold text-foreground mb-3">
+                      {item.title}
+                    </h3>
+                    <p className="text-muted-foreground">
+                      {item.description}
+                    </p>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+
+        {/* Products Section */}
+        <section className="py-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-4">
+                {t('home.products.title')}
+              </h2>
+              <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
+                Discover our range of premium organic plant care solutions
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+              {products.map((product) => (
+                <ProductCard key={product.id} product={product} />
+              ))}
+            </div>
+
+            <div className="text-center">
+              <Link to="/products">
+                <ButtonOrganic size="lg" className="flex items-center space-x-2">
+                  <span>View All Products</span>
+                  <ArrowRight className="w-5 h-5" />
+                </ButtonOrganic>
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* Testimonials Section */}
+        <section className="py-20 bg-card">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-4">
+                {t('home.testimonials.title')}
+              </h2>
+              <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+                Real experiences from customers who chose organic
+              </p>
+            </div>
+
+            <TestimonialSlider />
+
+            <div className="text-center mt-12">
+              <Link to="/testimonials">
+                <ButtonOrganic variant="outline" size="lg">
+                  Read More Reviews
+                </ButtonOrganic>
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <section className="py-20 bg-gradient-to-r from-primary to-success text-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 className="text-3xl md:text-5xl font-heading font-bold mb-6">
+              {t('home.cta.title')}
+            </h2>
+            <p className="text-xl mb-8 max-w-2xl mx-auto opacity-90">
+              {t('home.cta.subtitle')}
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link to="/products">
+                <ButtonOrganic 
+                  variant="accent" 
+                  size="lg"
+                  className="flex items-center space-x-2"
+                >
+                  <span>Shop Now</span>
+                  <ArrowRight className="w-5 h-5" />
+                </ButtonOrganic>
+              </Link>
+              <Link to="/contact">
+                <ButtonOrganic 
+                  variant="outline" 
+                  size="lg"
+                  className="border-white text-white hover:bg-white hover:text-primary"
+                >
+                  Get In Touch
+                </ButtonOrganic>
+              </Link>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <Footer />
+      <CartDrawer />
     </div>
   );
 };
