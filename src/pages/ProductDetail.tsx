@@ -9,16 +9,19 @@ import CartDrawer from '@/components/CartDrawer';
 import Footer from '@/components/Footer';
 import ProductGallery from '@/components/ProductGallery';
 import BeforeAfterSlider from '@/components/BeforeAfterSlider';
+import ProductComparison from '@/components/ProductComparison';
+import AdvantagesSection from '@/components/AdvantagesSection';
+import ProductReviews from '@/components/ProductReviews';
 import { ButtonOrganic } from '@/components/ui/button-organic';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { MessageCircle, ShoppingCart, CheckCircle, Star, Award, Shield, Leaf } from 'lucide-react';
 
 const ProductDetail = () => {
   const { slug } = useParams<{ slug: string }>();
   const { t } = useTranslation();
   const dispatch = useAppDispatch();
-  const [activeTab, setActiveTab] = useState('description');
   const product = useAppSelector(state => 
     slug ? selectProductBySlug(state, slug) : null
   );
@@ -92,13 +95,17 @@ const ProductDetail = () => {
               </p>
               
               {/* Rating Display */}
-              <div className="flex items-center gap-2 mb-6">
-                <div className="flex items-center">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 fill-primary text-primary" />
-                  ))}
+              <div className="flex items-center gap-4 mb-6">
+                <div className="flex items-center gap-2">
+                  <div className="flex items-center">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="w-5 h-5 fill-primary text-primary" />
+                    ))}
+                  </div>
+                  <span className="text-lg font-semibold text-foreground">4.9</span>
                 </div>
-                <span className="text-sm text-muted-foreground">(4.9/5 from 150+ reviews)</span>
+                <div className="h-4 w-px bg-border"></div>
+                <span className="text-sm text-muted-foreground">150+ {t('productDetail.reviews')}</span>
               </div>
             </div>
 
@@ -120,15 +127,15 @@ const ProductDetail = () => {
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
-                  <CheckCircle className="w-5 h-5 text-success" />
-                  Key Benefits
+                  <CheckCircle className="w-5 h-5 text-primary" />
+                  {t('productDetail.keyBenefits')}
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="grid grid-cols-1 gap-3">
                   {product.highlights.map((highlight, index) => (
                     <div key={index} className="flex items-center space-x-3">
-                      <CheckCircle className="w-5 h-5 text-success flex-shrink-0" />
+                      <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
                       <span className="text-foreground">{highlight}</span>
                     </div>
                   ))}
@@ -160,91 +167,100 @@ const ProductDetail = () => {
           </div>
         </div>
 
+        {/* Advantages Section */}
+        {product.advantages && (
+          <div className="mb-16">
+            <AdvantagesSection advantages={product.advantages} />
+          </div>
+        )}
+
+        {/* Product Comparison */}
+        <div className="mb-16">
+          <ProductComparison currentProductId={product.id} />
+        </div>
+
         {/* Product Details Tabs */}
         <div className="mb-16">
-          <div className="border-b border-border mb-8">
-            <nav className="flex space-x-8">
-              {['description', 'advantages', 'specifications', 'usage'].map((tab) => (
-                <button
-                  key={tab}
-                  onClick={() => setActiveTab(tab)}
-                  className={`py-4 px-2 border-b-2 font-medium text-sm transition-colors ${
-                    activeTab === tab
-                      ? 'border-primary text-primary'
-                      : 'border-transparent text-muted-foreground hover:text-foreground'
-                  }`}
-                >
-                  {tab.charAt(0).toUpperCase() + tab.slice(1)}
-                </button>
-              ))}
-            </nav>
-          </div>
-
-          <div className="min-h-[300px]">
-            {activeTab === 'description' && (
+          <Tabs defaultValue="overview" className="w-full">
+            <TabsList className="grid w-full grid-cols-4">
+              <TabsTrigger value="overview">{t('productDetail.overview')}</TabsTrigger>
+              <TabsTrigger value="usage">{t('productDetail.howToUse')}</TabsTrigger>
+              <TabsTrigger value="specifications">{t('productDetail.specifications')}</TabsTrigger>
+              <TabsTrigger value="faqs">{t('productDetail.faqs')}</TabsTrigger>
+            </TabsList>
+            
+            <TabsContent value="overview" className="mt-8">
               <Card>
                 <CardHeader>
-                  <CardTitle>About {product.name}</CardTitle>
+                  <CardTitle>{t('productDetail.overview')}</CardTitle>
                 </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground text-lg leading-relaxed">
+                <CardContent className="space-y-4">
+                  <p className="text-foreground text-lg leading-relaxed">
                     {product.longDesc}
                   </p>
                 </CardContent>
               </Card>
-            )}
-
-            {activeTab === 'advantages' && product.advantages && (
+            </TabsContent>
+            
+            <TabsContent value="usage" className="mt-8">
               <Card>
                 <CardHeader>
-                  <CardTitle>Key Advantages</CardTitle>
+                  <CardTitle>{t('productDetail.howToUse')}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    {product.advantages.map((advantage, index) => (
-                      <div key={index} className="flex items-start space-x-3 p-4 bg-success-light rounded-lg">
-                        <Star className="w-5 h-5 text-success flex-shrink-0 mt-0.5" />
-                        <span className="text-foreground">{advantage}</span>
-                      </div>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
-            )}
-
-            {activeTab === 'specifications' && product.specifications && (
-              <Card>
-                <CardHeader>
-                  <CardTitle>Technical Specifications</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    {Object.entries(product.specifications).map(([key, value]) => (
-                      <div key={key} className="flex flex-col space-y-1 p-4 border rounded-lg">
-                        <dt className="text-sm font-medium text-muted-foreground">{key}</dt>
-                        <dd className="text-lg font-semibold text-foreground">{value}</dd>
-                      </div>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
-            )}
-
-            {activeTab === 'usage' && product.usage && (
-              <Card>
-                <CardHeader>
-                  <CardTitle>Usage Instructions</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="bg-primary-light rounded-xl p-6">
-                    <p className="text-primary text-lg leading-relaxed">
+                  <div className="bg-primary/5 border border-primary/20 rounded-xl p-6">
+                    <p className="text-foreground text-lg leading-relaxed">
                       {product.usage}
                     </p>
                   </div>
                 </CardContent>
               </Card>
-            )}
-          </div>
+            </TabsContent>
+            
+            <TabsContent value="specifications" className="mt-8">
+              <Card>
+                <CardHeader>
+                  <CardTitle>{t('productDetail.specifications')}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  {product.specifications && (
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      {Object.entries(product.specifications).map(([key, value]) => (
+                        <div key={key} className="flex flex-col space-y-2 p-4 border rounded-lg hover:border-primary/30 transition-colors">
+                          <dt className="text-sm font-medium text-muted-foreground uppercase tracking-wider">{key}</dt>
+                          <dd className="text-lg font-semibold text-foreground">{value}</dd>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </CardContent>
+              </Card>
+            </TabsContent>
+            
+            <TabsContent value="faqs" className="mt-8">
+              <Card>
+                <CardHeader>
+                  <CardTitle>{t('productDetail.faqs')}</CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-6">
+                  <div className="space-y-4">
+                    <div className="border rounded-lg p-4">
+                      <h4 className="font-semibold text-foreground mb-2">How often should I apply this product?</h4>
+                      <p className="text-muted-foreground">For best results, apply every 10-15 days during the growing season. Adjust frequency based on plant response and growing conditions.</p>
+                    </div>
+                    <div className="border rounded-lg p-4">
+                      <h4 className="font-semibold text-foreground mb-2">Is it safe for edible plants?</h4>
+                      <p className="text-muted-foreground">Yes, all our products are 100% organic and safe for use on edible plants. No harmful chemicals or residues.</p>
+                    </div>
+                    <div className="border rounded-lg p-4">
+                      <h4 className="font-semibold text-foreground mb-2">Can I mix it with other fertilizers?</h4>
+                      <p className="text-muted-foreground">Our products are compatible with most organic fertilizers. However, we recommend testing on a small area first or consulting our support team.</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </TabsContent>
+          </Tabs>
         </div>
 
         {/* Before/After Comparison */}
@@ -256,13 +272,18 @@ const ProductDetail = () => {
           />
         </div>
 
+        {/* Customer Reviews */}
+        <div className="mb-16">
+          <ProductReviews productId={product.id} />
+        </div>
+
         {/* Call to Action Section */}
         <div className="bg-gradient-to-r from-primary to-primary-hover rounded-2xl p-8 text-center text-white">
           <h2 className="text-3xl font-heading font-bold mb-4">
-            Ready to Transform Your Garden?
+            {t('productDetail.readyToTransform')}
           </h2>
           <p className="text-xl mb-8 opacity-90">
-            Join thousands of satisfied customers who trust {product.name}
+            {t('productDetail.joinCustomers')} {product.name}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
             <ButtonOrganic

@@ -57,6 +57,23 @@
     "notes": "خصوصی نوٹس یا ہدایات",
     "rtqMessage": "قیمت کی درخواست"
   },
+  "productDetail": {
+    "rating": "ریٹنگ",
+    "reviews": "جائزے",
+    "keyBenefits": "اہم فوائد",
+    "advantages": "فوائد",
+    "specifications": "تکنیکی تفصیلات",
+    "description": "تفصیل",
+    "overview": "جائزہ",
+    "howToUse": "استعمال کا طریقہ",
+    "ingredients": "اجزاء",
+    "faqs": "عام سوالات",
+    "customerReviews": "گاہکوں کے جائزے",
+    "beforeAfter": "پہلے اور بعد",
+    "comparison": "مصنوعات کا موازنہ",
+    "readyToTransform": "اپنے باغ کو تبدیل کرنے کے لیے تیار ہیں؟",
+    "joinCustomers": "ہزاروں مطمئن گاہکوں میں شامل ہوں جو بھروسہ کرتے ہیں"
+  },
   "footer": {
     "contact": "رابطہ کریں",
     "quickLinks": "فوری لنکس",

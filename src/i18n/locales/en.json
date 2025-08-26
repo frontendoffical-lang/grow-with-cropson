@@ -57,6 +57,23 @@
     "notes": "Special notes or instructions",
     "rtqMessage": "Request to Quote"
   },
+  "productDetail": {
+    "rating": "Rating",
+    "reviews": "Reviews",
+    "keyBenefits": "Key Benefits",
+    "advantages": "Advantages",
+    "specifications": "Technical Specifications",
+    "description": "Description",
+    "overview": "Overview",
+    "howToUse": "How to Use",
+    "ingredients": "Ingredients",
+    "faqs": "FAQs",
+    "customerReviews": "Customer Reviews",
+    "beforeAfter": "Before & After",
+    "comparison": "Product Comparison",
+    "readyToTransform": "Ready to Transform Your Garden?",
+    "joinCustomers": "Join thousands of satisfied customers who trust"
+  },
   "footer": {
     "contact": "Contact Us",
     "quickLinks": "Quick Links",
