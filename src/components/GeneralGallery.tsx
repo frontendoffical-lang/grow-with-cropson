@@ -14,9 +14,10 @@ const GeneralGallery = () => {
     {
       id: 1,
       type: 'image' as const,
-      src: '/api/placeholder/400/300',
+      src: '/api/placeholder/400/500',
       title: 'Healthy Plant Growth',
-      category: 'Before & After'
+      category: 'Before & After',
+      height: 'tall'
     },
     {
       id: 2,
@@ -24,36 +25,58 @@ const GeneralGallery = () => {
       src: '/api/placeholder/400/300',
       videoSrc: '#',
       title: 'How to Apply CROPSEN',
-      category: 'Tutorial'
+      category: 'Tutorial',
+      height: 'medium'
     },
     {
       id: 3,
       type: 'image' as const,
-      src: '/api/placeholder/400/300',
+      src: '/api/placeholder/400/600',
       title: 'Blooming Results',
-      category: 'Results'
+      category: 'Results',
+      height: 'tall'
     },
     {
       id: 4,
       type: 'image' as const,
-      src: '/api/placeholder/400/300',
+      src: '/api/placeholder/400/350',
       title: 'Organic Ingredients',
-      category: 'Product'
+      category: 'Product',
+      height: 'medium'
     },
     {
       id: 5,
       type: 'video' as const,
-      src: '/api/placeholder/400/300',
+      src: '/api/placeholder/400/400',
       videoSrc: '#',
       title: 'Customer Testimonial',
-      category: 'Reviews'
+      category: 'Reviews',
+      height: 'medium'
     },
     {
       id: 6,
       type: 'image' as const,
-      src: '/api/placeholder/400/300',
+      src: '/api/placeholder/400/550',
       title: 'Garden Transformation',
-      category: 'Before & After'
+      category: 'Before & After',
+      height: 'tall'
+    },
+    {
+      id: 7,
+      type: 'image' as const,
+      src: '/api/placeholder/400/320',
+      title: 'Pest-Free Plants',
+      category: 'Results',
+      height: 'medium'
+    },
+    {
+      id: 8,
+      type: 'video' as const,
+      src: '/api/placeholder/400/480',
+      videoSrc: '#',
+      title: 'Success Story',
+      category: 'Reviews',
+      height: 'tall'
     }
   ];
 
@@ -73,26 +96,26 @@ const GeneralGallery = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-4">
-              {t('home.gallery.title', 'Our Gallery')}
+              {t('home.gallery.title', 'Proven Results')}
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              {t('home.gallery.subtitle', 'See the amazing results and learn how to use our organic products')}
+              {t('home.gallery.subtitle', 'Real transformations and success stories from our organic plant care solutions')}
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="columns-1 md:columns-2 lg:columns-4 gap-6 space-y-6">
             {galleryItems.map((item) => (
               <Card 
                 key={item.id} 
-                className="group cursor-pointer overflow-hidden hover:shadow-lg transition-shadow duration-300"
+                className="group cursor-pointer overflow-hidden hover:shadow-lg transition-shadow duration-300 break-inside-avoid mb-6"
                 onClick={() => openLightbox(item.videoSrc || item.src, item.type)}
               >
                 <CardContent className="p-0 relative">
-                  <div className="aspect-video relative overflow-hidden">
+                  <div className="relative overflow-hidden">
                     <img
                       src={item.src}
                       alt={item.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-300"
                     />
                     <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
                     
