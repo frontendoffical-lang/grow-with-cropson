@@ -78,7 +78,7 @@ const ProductCard = ({ product, className }: ProductCardProps) => {
         </div>
 
         {/* Badges */}
-        <div className="flex flex-wrap gap-2">
+        {/* <div className="flex flex-wrap gap-2">
           {product.badges.map((badge) => (
             <Badge 
               key={badge} 
@@ -88,7 +88,7 @@ const ProductCard = ({ product, className }: ProductCardProps) => {
               {t(`badges.${badge}`)}
             </Badge>
           ))}
-        </div>
+        </div> */}
 
         {/* Highlights */}
         <div className="space-y-1">

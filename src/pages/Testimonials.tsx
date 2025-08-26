@@ -16,7 +16,7 @@ const Testimonials = () => {
       
       <main>
         {/* Hero Section */}
-        <section className="py-20 bg-gradient-to-b from-primary-light to-background">
+        <section className="py-10 bg-gradient-to-b from-primary-light to-background">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h1 className="text-4xl md:text-6xl font-heading font-bold text-foreground mb-6">
               {t('home.testimonials.title')}
@@ -28,7 +28,7 @@ const Testimonials = () => {
         </section>
 
         {/* Testimonials Grid */}
-        <section className="py-20">
+        <section className="py-10">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {testimonials.map((testimonial) => (

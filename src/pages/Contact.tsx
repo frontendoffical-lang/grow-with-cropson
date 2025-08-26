@@ -93,7 +93,7 @@ Message: ${formData.message}
       
       <main>
         {/* Hero Section */}
-        <section className="py-20 bg-gradient-to-b from-primary-light to-background">
+        <section className="py-10 bg-gradient-to-b from-primary-light to-background">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h1 className="text-4xl md:text-6xl font-heading font-bold text-foreground mb-6">
               {t('nav.contact')}
@@ -105,7 +105,7 @@ Message: ${formData.message}
         </section>
 
         {/* Contact Section */}
-        <section className="py-20">
+        <section className="py-10">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
               {/* Contact Information */}

@@ -110,7 +110,7 @@ const ProductDetail = () => {
             </div>
 
             {/* Badges */}
-            <div className="flex flex-wrap gap-3">
+            {/* <div className="flex flex-wrap gap-3">
               {product.badges.map((badge) => (
                 <Badge 
                   key={badge} 
@@ -121,7 +121,7 @@ const ProductDetail = () => {
                   {t(`badges.${badge}`)}
                 </Badge>
               ))}
-            </div>
+            </div> */}
 
             {/* Key Benefits */}
             <Card>

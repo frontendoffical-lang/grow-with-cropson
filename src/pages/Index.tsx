@@ -10,7 +10,7 @@ import ProductCard from '@/components/ProductCard';
 import TestimonialSlider from '@/components/TestimonialSlider';
 import GeneralGallery from '@/components/GeneralGallery';
 import { ButtonOrganic } from '@/components/ui/button-organic';
-import { Leaf, Shield, Heart, Globe, ArrowRight } from 'lucide-react';
+import { Leaf, Shield, Heart, Globe, ArrowRight, HeartHandshake, Rocket,Timer,BookCheck } from 'lucide-react';
 
 const Index = () => {
   const { t } = useTranslation();
@@ -36,13 +36,33 @@ const Index = () => {
       icon: Globe,
       title: t('home.why.ecoFriendly'),
       description: 'Environmentally sustainable and responsible'
+    },
+    {
+      icon: BookCheck,
+      title: t('home.why.trusted'),
+      description: 'Trusted by farmers worldwide for quality'
+    },
+    {
+      icon: HeartHandshake,
+      title: t('home.why.backed'),
+      description: 'Backed by University of Agricultural , Faisalabad'
+    },
+    {
+      icon: Rocket,
+      title: t('home.why.Productivity'),
+      description: 'Boosts crop productivity by contoliiing pest and soil fertility'
+    }, {
+      icon: Timer,
+      title: t('home.why.lifetime'),
+      description: 'Extend the life expentency of plants'
     }
+
   ];
 
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      
+
       <main>
         {/* Hero Section */}
         <section className="py-8 px-4 sm:px-6 lg:px-8">
@@ -52,7 +72,7 @@ const Index = () => {
         </section>
 
         {/* Why Choose CROPSEN Section */}
-        <section className="py-20 bg-gradient-to-b from-primary-light to-background">
+        <section className="py-10 bg-gradient-to-b from-primary-light to-background">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-4">
@@ -85,7 +105,7 @@ const Index = () => {
         </section>
 
         {/* Products Section */}
-        <section className="py-20">
+        <section className="py-10">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-4">
@@ -102,14 +122,6 @@ const Index = () => {
               ))}
             </div>
 
-            <div className="text-center">
-              <Link to="/products">
-                <ButtonOrganic size="lg" className="flex items-center space-x-2">
-                  <span>View All Products</span>
-                  <ArrowRight className="w-5 h-5" />
-                </ButtonOrganic>
-              </Link>
-            </div>
           </div>
         </section>
 
@@ -117,7 +129,7 @@ const Index = () => {
         <GeneralGallery />
 
         {/* Testimonials Section */}
-        <section className="py-20 bg-card">
+        <section className="py-10 bg-card">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-4">
@@ -141,7 +153,7 @@ const Index = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 bg-gradient-to-r from-primary to-success text-white">
+        <section className="py-10 bg-gradient-to-r from-primary to-success text-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-3xl md:text-5xl font-heading font-bold mb-6">
               {t('home.cta.title')}
@@ -151,8 +163,8 @@ const Index = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/products">
-                <ButtonOrganic 
-                  variant="accent" 
+                <ButtonOrganic
+                  variant="accent"
                   size="lg"
                   className="flex items-center space-x-2"
                 >
@@ -161,8 +173,8 @@ const Index = () => {
                 </ButtonOrganic>
               </Link>
               <Link to="/contact">
-                <ButtonOrganic 
-                  variant="outline" 
+                <ButtonOrganic
+                  variant="outline"
                   size="lg"
                   className="border-white text-white hover:bg-white hover:text-primary"
                 >

@@ -17,14 +17,14 @@ const Footer = () => {
     {
       icon: Phone,
       label: 'Phone',
-      value: '+92 300 123 4567',
-      action: () => window.open('tel:+923001234567')
+      value: '+92 303 4877569',
+      action: () => window.open('tel:+923034877569')
     },
     {
       icon: MessageCircle,
       label: 'WhatsApp',
-      value: '+92 300 123 4567',
-      action: () => window.open('https://wa.me/923001234567')
+      value: '+92 303 4877569',
+      action: () => window.open('https://wa.me/923034877569')
     },
     {
       icon: Mail,

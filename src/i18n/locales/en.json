@@ -1,6 +1,6 @@
 {
   "brand": "CROPSEN",
-  "tagline": "Organic • Chemical-Free • No Side Effects",
+  "tagline": "From the Earth, For the Earth",
   "nav": {
     "home": "Home",
     "products": "Products",
@@ -17,7 +17,7 @@
   },
   "cta": {
     "addToCart": "Add to Cart",
-    "orderWhatsapp": "Order on WhatsApp",
+    "orderWhatsapp": "Order Now",
     "enquiry": "Enquiry",
     "viewDetails": "View Details",
     "sendRTQ": "Send RTQ",
@@ -34,7 +34,11 @@
       "organic": "100% Organic Ingredients",
       "chemicalFree": "Completely Chemical-Free",
       "noSideEffects": "No Harmful Side Effects",
-      "ecoFriendly": "Safe for Environment"
+      "ecoFriendly": "Safe for Environment",
+      "trusted": "Proven & Trusted",
+      "Productivity": "Boosts Crop Productivity",
+      "backed": "Backed by Research",
+      "lifetime": "Life Period"
     },
     "products": {
       "title": "Our Premium Products"

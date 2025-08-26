@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { ChevronLeft, ChevronRight, MessageCircle, Eye, ShoppingCart } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Send, Eye } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useAppSelector, useAppDispatch } from '@/store';
 import { selectAllProducts } from '@/store/slices/productsSlice';
@@ -10,10 +10,10 @@ import { Badge } from './ui/badge';
 import { cn } from '@/lib/utils';
 
 // Import hero images
-import mrFlowersHero from '@/assets/mr-flowers-hero.jpg';
-import drGreenHero from '@/assets/dr-green-hero.jpg';
-import fruitamilHero from '@/assets/fruitamil-hero.jpg';
-import herbalShieldHero from '@/assets/herbal-shield-hero.jpg';
+import mrFlowersHero from '@/assets/flower.png';
+import drGreenHero from '@/assets/drgreen.png';
+import fruitamilHero from '@/assets/fruitmail.png';
+import herbalShieldHero from '@/assets/herbal-shield.png';
 
 const HeroCarousel = () => {
   const { t } = useTranslation();
@@ -99,18 +99,7 @@ const HeroCarousel = () => {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
                   {/* Text Content */}
                   <div className="text-white space-y-6">
-                    <div className="flex flex-wrap gap-2 mb-4">
-                      {product.badges.map((badge) => (
-                        <Badge 
-                          key={badge}
-                          variant="secondary"
-                          className="bg-white/20 text-white border-white/30"
-                        >
-                          {t(`badges.${badge}`)}
-                        </Badge>
-                      ))}
-                    </div>
-                    
+                                     
                     <h1 className="text-4xl md:text-6xl font-heading font-bold mb-4">
                       {product.name}
                     </h1>
@@ -119,20 +108,20 @@ const HeroCarousel = () => {
                       {product.tagline}
                     </p>
                     
-                    <p className="text-lg md:text-xl text-white/90 mb-8 max-w-lg">
-                      {product.shortDesc}
+                    <p className="text-lg md:text-xl text-white/90 mb-8 max-w-lg line-clamp-2">
+                      {product.longDesc}
                     </p>
 
                     {/* Action Buttons */}
                     <div className="flex flex-col sm:flex-row gap-4">
-                      <ButtonOrganic
+                      {/* <ButtonOrganic
                         size="lg"
                         onClick={() => handleAddToCart(product)}
                         className="flex items-center justify-center space-x-2"
                       >
                         <ShoppingCart className="w-5 h-5" />
                         <span>{t('cta.addToCart')}</span>
-                      </ButtonOrganic>
+                      </ButtonOrganic> */}
                       
                       <ButtonOrganic
                         variant="whatsapp"
@@ -140,7 +129,7 @@ const HeroCarousel = () => {
                         onClick={() => handleWhatsAppOrder(product)}
                         className="flex items-center justify-center space-x-2"
                       >
-                        <MessageCircle className="w-5 h-5" />
+                        <Send className="w-5 h-5" />
                         <span>{t('cta.orderWhatsapp')}</span>
                       </ButtonOrganic>
                       
