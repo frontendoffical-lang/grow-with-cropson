@@ -8,6 +8,7 @@ import Footer from '@/components/Footer';
 import HeroCarousel from '@/components/HeroCarousel';
 import ProductCard from '@/components/ProductCard';
 import TestimonialSlider from '@/components/TestimonialSlider';
+import GeneralGallery from '@/components/GeneralGallery';
 import { ButtonOrganic } from '@/components/ui/button-organic';
 import { Leaf, Shield, Heart, Globe, ArrowRight } from 'lucide-react';
 
@@ -111,6 +112,9 @@ const Index = () => {
             </div>
           </div>
         </section>
+
+        {/* Gallery Section */}
+        <GeneralGallery />
 
         {/* Testimonials Section */}
         <section className="py-20 bg-card">

@@ -9,7 +9,7 @@ import CartDrawer from '@/components/CartDrawer';
 import Footer from '@/components/Footer';
 import ProductGallery from '@/components/ProductGallery';
 import BeforeAfterSlider from '@/components/BeforeAfterSlider';
-import ProductComparison from '@/components/ProductComparison';
+
 import AdvantagesSection from '@/components/AdvantagesSection';
 import ProductReviews from '@/components/ProductReviews';
 import { ButtonOrganic } from '@/components/ui/button-organic';
@@ -174,10 +174,6 @@ const ProductDetail = () => {
           </div>
         )}
 
-        {/* Product Comparison */}
-        <div className="mb-16">
-          <ProductComparison currentProductId={product.id} />
-        </div>
 
         {/* Product Details Tabs */}
         <div className="mb-16">
