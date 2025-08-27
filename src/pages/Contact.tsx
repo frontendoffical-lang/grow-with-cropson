@@ -96,10 +96,10 @@ Message: ${formData.message}
         <section className="py-10 bg-gradient-to-b from-primary-light to-background">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h1 className="text-4xl md:text-6xl font-heading font-bold text-foreground mb-6">
-              {t('nav.contact')}
+              {t('contact.title')}
             </h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Get in touch with us for any questions about our organic plant care products
+              {t('contact.subtitle')}
             </p>
           </div>
         </section>
@@ -111,7 +111,7 @@ Message: ${formData.message}
               {/* Contact Information */}
               <div>
                 <h2 className="text-3xl font-heading font-bold text-foreground mb-8">
-                  Get In Touch
+                  {t('contact.getInTouch')}
                 </h2>
                 
                 <div className="space-y-6 mb-8">
@@ -139,7 +139,7 @@ Message: ${formData.message}
 
                 <div className="bg-accent-light p-6 rounded-xl">
                   <h3 className="font-heading font-semibold text-accent-foreground mb-3">
-                    Business Hours
+                    {t('contact.businessHours')}
                   </h3>
                   <div className="space-y-2 text-sm text-accent-foreground">
                     <div className="flex justify-between">
@@ -162,7 +162,7 @@ Message: ${formData.message}
               <div>
                 <div className="card-organic">
                   <h2 className="text-2xl font-heading font-bold text-foreground mb-6">
-                    Send us a Message
+                    {t('contact.sendMessage')}
                   </h2>
                   
                   <form onSubmit={handleSubmit} className="space-y-6">
@@ -234,6 +234,49 @@ Message: ${formData.message}
                   </form>
                 </div>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Distributorship Section */}
+        <section className="py-10 bg-gradient-to-br from-success-light to-primary-light">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-4">
+                {t('contact.distributorship.title')}
+              </h2>
+              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+                {t('contact.distributorship.subtitle')}
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+              {[
+                { key: 'training', icon: '🎓' },
+                { key: 'support', icon: '🤝' },
+                { key: 'margins', icon: '💰' },
+                { key: 'territory', icon: '🗺️' }
+              ].map(({ key, icon }) => (
+                <div key={key} className="bg-background/80 backdrop-blur-sm p-6 rounded-xl text-center">
+                  <div className="text-4xl mb-4">{icon}</div>
+                  <h3 className="font-heading font-semibold text-foreground mb-2">
+                    {t(`contact.distributorship.benefits.${key}`)}
+                  </h3>
+                </div>
+              ))}
+            </div>
+
+            <div className="text-center">
+              <ButtonOrganic 
+                size="lg" 
+                onClick={() => {
+                  const message = "I'm interested in becoming a distributor for CROPSEN products. Please provide more information about the distributorship opportunities.";
+                  const whatsappUrl = `https://wa.me/923001234567?text=${encodeURIComponent(message)}`;
+                  window.open(whatsappUrl, '_blank');
+                }}
+              >
+                {t('contact.distributorship.apply')}
+              </ButtonOrganic>
             </div>
           </div>
         </section>

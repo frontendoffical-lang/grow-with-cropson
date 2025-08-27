@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Provider } from 'react-redux';
 import { store } from '@/store';
+import LanguageInitializer from '@/components/LanguageInitializer';
 import '@/i18n';
 
 import Index from "./pages/Index";
@@ -19,6 +20,7 @@ const queryClient = new QueryClient();
 
 const App = () => (
   <Provider store={store}>
+    <LanguageInitializer />
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <Toaster />

@@ -78,6 +78,52 @@
     "readyToTransform": "Ready to Transform Your Garden?",
     "joinCustomers": "Join thousands of satisfied customers who trust"
   },
+  "about": {
+    "title": "About CROPSEN",
+    "subtitle": "We are dedicated to providing premium organic plant care solutions that are safe, effective, and environmentally responsible.",
+    "ourStory": "Our Story",
+    "timeline": {
+      "title": "Our Journey",
+      "2020": {
+        "title": "Foundation",
+        "description": "CROPSEN was founded with a vision to revolutionize organic plant care"
+      },
+      "2021": {
+        "title": "First Products",
+        "description": "Launched our first line of chemical-free plant nutrition products"
+      },
+      "2022": {
+        "title": "Market Expansion",
+        "description": "Expanded to serve customers across Pakistan with proven results"
+      },
+      "2023": {
+        "title": "Research & Development",
+        "description": "Established R&D facility for advanced organic formulations"
+      },
+      "2024": {
+        "title": "Global Vision",
+        "description": "Working towards sustainable agriculture solutions worldwide"
+      }
+    }
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "Get in touch with us for any questions about our organic plant care products",
+    "getInTouch": "Get In Touch",
+    "sendMessage": "Send us a Message",
+    "businessHours": "Business Hours",
+    "distributorship": {
+      "title": "Become a Distributor",
+      "subtitle": "Join our growing network of distributors and help spread organic farming",
+      "benefits": {
+        "training": "Comprehensive Product Training",
+        "support": "Marketing & Sales Support",
+        "margins": "Attractive Profit Margins",
+        "territory": "Exclusive Territory Rights"
+      },
+      "apply": "Apply for Distributorship"
+    }
+  },
   "footer": {
     "contact": "Contact Us",
     "quickLinks": "Quick Links",

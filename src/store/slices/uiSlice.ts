@@ -1,5 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from '../index';
+import i18n from '@/i18n';
 
 interface UiState {
   language: 'en' | 'ur';
@@ -18,6 +19,9 @@ const uiSlice = createSlice({
     setLanguage: (state, action: PayloadAction<'en' | 'ur'>) => {
       state.language = action.payload;
       state.isRTL = action.payload === 'ur';
+      
+      // Update i18n language
+      i18n.changeLanguage(action.payload);
       
       // Update document direction
       if (typeof document !== 'undefined') {
