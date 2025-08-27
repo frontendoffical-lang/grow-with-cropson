@@ -63,25 +63,25 @@ Message: ${formData.message}
   const contactInfo = [
     {
       icon: Phone,
-      title: 'Phone',
+      title: t('contactInfo.phone'),
       value: '+92 300 123 4567',
       action: () => window.open('tel:+923001234567')
     },
     {
       icon: MessageCircle,
-      title: 'WhatsApp',
+      title: t('contactInfo.whatsapp'),
       value: '+92 300 123 4567',
       action: () => window.open('https://wa.me/923001234567')
     },
     {
       icon: Mail,
-      title: 'Email',
+      title: t('contactInfo.email'),
       value: 'info@cropsen.com',
       action: () => window.open('mailto:info@cropsen.com')
     },
     {
       icon: MapPin,
-      title: 'Address',
+      title: t('contactInfo.address'),
       value: 'Lahore, Punjab, Pakistan',
       action: null
     }
@@ -143,16 +143,16 @@ Message: ${formData.message}
                   </h3>
                   <div className="space-y-2 text-sm text-accent-foreground">
                     <div className="flex justify-between">
-                      <span>Monday - Friday:</span>
-                      <span>9:00 AM - 6:00 PM</span>
+                      <span>{t('businessInfo.monday_friday')}</span>
+                      <span>{t('businessInfo.hours_weekday')}</span>
                     </div>
                     <div className="flex justify-between">
-                      <span>Saturday:</span>
-                      <span>9:00 AM - 4:00 PM</span>
+                      <span>{t('businessInfo.saturday')}</span>
+                      <span>{t('businessInfo.hours_saturday')}</span>
                     </div>
                     <div className="flex justify-between">
-                      <span>Sunday:</span>
-                      <span>Closed</span>
+                      <span>{t('businessInfo.sunday')}</span>
+                      <span>{t('businessInfo.closed')}</span>
                     </div>
                   </div>
                 </div>
@@ -168,18 +168,18 @@ Message: ${formData.message}
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
-                        <Label htmlFor="name">Name *</Label>
+                        <Label htmlFor="name">{t('form.name')} {t('form.required')}</Label>
                         <Input
                           id="name"
                           name="name"
                           value={formData.name}
                           onChange={handleChange}
                           required
-                          placeholder="Your full name"
+                          placeholder={t('form.placeholders.name')}
                         />
                       </div>
                       <div>
-                        <Label htmlFor="email">Email *</Label>
+                        <Label htmlFor="email">{t('form.email')} {t('form.required')}</Label>
                         <Input
                           id="email"
                           name="email"
@@ -187,36 +187,36 @@ Message: ${formData.message}
                           value={formData.email}
                           onChange={handleChange}
                           required
-                          placeholder="your@email.com"
+                          placeholder={t('form.placeholders.email')}
                         />
                       </div>
                     </div>
                     
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
-                        <Label htmlFor="phone">Phone</Label>
+                        <Label htmlFor="phone">{t('form.phone')}</Label>
                         <Input
                           id="phone"
                           name="phone"
                           value={formData.phone}
                           onChange={handleChange}
-                          placeholder="+92 300 123 4567"
+                          placeholder={t('form.placeholders.phone')}
                         />
                       </div>
                       <div>
-                        <Label htmlFor="subject">Subject</Label>
+                        <Label htmlFor="subject">{t('form.subject')}</Label>
                         <Input
                           id="subject"
                           name="subject"
                           value={formData.subject}
                           onChange={handleChange}
-                          placeholder="How can we help?"
+                          placeholder={t('form.placeholders.subject')}
                         />
                       </div>
                     </div>
                     
                     <div>
-                      <Label htmlFor="message">Message *</Label>
+                      <Label htmlFor="message">{t('form.message')} {t('form.required')}</Label>
                       <Textarea
                         id="message"
                         name="message"
@@ -224,12 +224,12 @@ Message: ${formData.message}
                         onChange={handleChange}
                         required
                         rows={5}
-                        placeholder="Tell us about your requirements, questions, or how we can help you..."
+                        placeholder={t('form.placeholders.message')}
                       />
                     </div>
                     
                     <ButtonOrganic type="submit" size="lg" className="w-full">
-                      Send Message
+                      {t('form.send')}
                     </ButtonOrganic>
                   </form>
                 </div>
@@ -270,7 +270,7 @@ Message: ${formData.message}
               <ButtonOrganic 
                 size="lg" 
                 onClick={() => {
-                  const message = "I'm interested in becoming a distributor for CROPSEN products. Please provide more information about the distributorship opportunities.";
+                  const message = t('contact.distributorship.applyMessage');
                   const whatsappUrl = `https://wa.me/923001234567?text=${encodeURIComponent(message)}`;
                   window.open(whatsappUrl, '_blank');
                 }}

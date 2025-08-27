@@ -90,18 +90,13 @@ const About = () => {
                 </h2>
                 <div className="space-y-4 text-muted-foreground text-lg">
                   <p>
-                    CROPSEN was born from a passion for sustainable agriculture and a deep concern 
-                    for the harmful effects of chemical fertilizers and pesticides on our environment 
-                    and health.
+                    {t('about.storyText1')}
                   </p>
                   <p>
-                    Founded by agricultural experts and environmental enthusiasts, we set out to 
-                    create a line of plant care products that would be both effective and completely 
-                    safe for families and the ecosystem.
+                    {t('about.storyText2')}
                   </p>
                   <p>
-                    Today, CROPSEN stands as a trusted brand in organic plant care, helping 
-                    thousands of gardeners and farmers grow healthier plants naturally.
+                    {t('about.storyText3')}
                   </p>
                 </div>
               </div>
@@ -110,7 +105,7 @@ const About = () => {
                   <div className="text-center">
                     <Leaf className="w-24 h-24 text-primary mx-auto mb-4" />
                     <h3 className="text-2xl font-heading font-bold text-primary">
-                      Naturally Better
+                      {t('about.naturallyBetter')}
                     </h3>
                   </div>
                 </div>
@@ -127,7 +122,7 @@ const About = () => {
                 {t('about.timeline.title')}
               </h2>
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                Milestones in our commitment to organic excellence
+                {t('about.timelineSubtitle')}
               </p>
             </div>
 

@@ -72,10 +72,10 @@ const GeneralGallery = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-4">
-              {t('home.gallery.title', 'Proven Results')}
+              {t('gallery.title')}
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              {t('home.gallery.subtitle', 'Real transformations and success stories from our organic plant care solutions')}
+              {t('gallery.subtitle')}
             </p>
           </div>
 
@@ -138,7 +138,7 @@ const GeneralGallery = () => {
                 <div className="bg-black rounded-lg overflow-hidden">
                   <img
                     src={selectedMedia}
-                    alt="Gallery item"
+                    alt={t('gallery.altText')}
                     className="w-full h-auto max-h-[80vh] object-contain"
                   />
                 </div>

@@ -24,6 +24,37 @@
     "continueShopping": "Continue Shopping",
     "clearCart": "Clear Cart"
   },
+  "form": {
+    "name": "Name",
+    "email": "Email", 
+    "phone": "Phone",
+    "subject": "Subject",
+    "message": "Message",
+    "required": "*",
+    "placeholders": {
+      "name": "Your full name",
+      "email": "your@email.com",
+      "phone": "+92 300 123 4567",
+      "subject": "How can we help?",
+      "message": "Tell us about your requirements, questions, or how we can help you..."
+    },
+    "send": "Send Message"
+  },
+  "contactInfo": {
+    "phone": "Phone",
+    "whatsapp": "WhatsApp", 
+    "email": "Email",
+    "address": "Address"
+  },
+  "businessInfo": {
+    "hours": "Business Hours",
+    "monday_friday": "Monday - Friday:",
+    "saturday": "Saturday:",
+    "sunday": "Sunday:",
+    "closed": "Closed",
+    "hours_weekday": "9:00 AM - 6:00 PM",
+    "hours_saturday": "9:00 AM - 4:00 PM"
+  },
   "home": {
     "hero": {
       "title": "Grow Naturally with CROPSEN",
@@ -104,7 +135,17 @@
         "title": "Global Vision",
         "description": "Working towards sustainable agriculture solutions worldwide"
       }
-    }
+    },
+    "naturallyBetter": "Naturally Better",
+    "timelineSubtitle": "Milestones in our commitment to organic excellence",
+    "storyText1": "CROPSEN was born from a passion for sustainable agriculture and a deep concern for the harmful effects of chemical fertilizers and pesticides on our environment and health.",
+    "storyText2": "Founded by agricultural experts and environmental enthusiasts, we set out to create a line of plant care products that would be both effective and completely safe for families and the ecosystem.",
+    "storyText3": "Today, CROPSEN stands as a trusted brand in organic plant care, helping thousands of gardeners and farmers grow healthier plants naturally."
+  },
+  "gallery": {
+    "title": "Proven Results",
+    "subtitle": "Real transformations and success stories from our organic plant care solutions",
+    "altText": "Gallery item"
   },
   "contact": {
     "title": "Contact Us",
@@ -121,7 +162,8 @@
         "margins": "Attractive Profit Margins",
         "territory": "Exclusive Territory Rights"
       },
-      "apply": "Apply for Distributorship"
+      "apply": "Apply for Distributorship",
+      "applyMessage": "I'm interested in becoming a distributor for CROPSEN products. Please provide more information about the distributorship opportunities."
     }
   },
   "footer": {
