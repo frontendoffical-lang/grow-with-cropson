@@ -19,6 +19,11 @@ export interface Product {
   beforeAfter: {
     before: string;
     after: string;
+    images?: Array<{
+      before: string;
+      after: string;
+      title: string;
+    }>;
   };
   price?: number;
   advantages?: string[];
@@ -43,7 +48,15 @@ const initialState: ProductsState = {
       usage: "Mix 2-3ml per liter of water. Apply during early flowering stage and repeat every 15 days. For best results, apply in early morning or late evening when temperatures are cooler.",
       images: [mrFlower],
       video: null,
-      beforeAfter: { before: "/api/placeholder/400/300", after: "/api/placeholder/400/300" },
+      beforeAfter: { 
+        before: "/api/placeholder/400/300", 
+        after: "/api/placeholder/400/300",
+        images: [
+          { before: "/api/placeholder/400/300", after: "/api/placeholder/400/300", title: "Rose Garden Transformation" },
+          { before: "/api/placeholder/400/300", after: "/api/placeholder/400/300", title: "Flower Density Improvement" },
+          { before: "/api/placeholder/400/300", after: "/api/placeholder/400/300", title: "Bloom Quality Enhancement" }
+        ]
+      },
       advantages: [
         "Increases flower count by up to 60%",
         "Extends bloom life by 40%",
@@ -71,7 +84,15 @@ const initialState: ProductsState = {
       usage: "Mix 3-4ml per liter of water. Apply every 10-14 days during growing season. Apply as soil drench for root development or foliar spray for quick absorption.",
       images: [drGreen],
       video: null,
-      beforeAfter: { before: "https://herbal-shield.vercel.app/images/extracted_images/slide6_image7.jpg", after: "/api/placeholder/400/300" },
+      beforeAfter: { 
+        before: "https://herbal-shield.vercel.app/images/extracted_images/slide6_image7.jpg", 
+        after: "/api/placeholder/400/300",
+        images: [
+          { before: "https://herbal-shield.vercel.app/images/extracted_images/slide6_image7.jpg", after: "/api/placeholder/400/300", title: "Plant Growth Boost" },
+          { before: "/api/placeholder/400/300", after: "/api/placeholder/400/300", title: "Root Development" },
+          { before: "/api/placeholder/400/300", after: "/api/placeholder/400/300", title: "Leaf Density Increase" }
+        ]
+      },
       advantages: [
         "Promotes 70% faster root development",
         "Increases leaf density and size",
@@ -99,7 +120,15 @@ const initialState: ProductsState = {
       usage: "Mix 4-5ml per liter of water. Apply from fruit setting stage, repeat every 20 days. Continue applications until 2 weeks before harvest for optimal results.",
       images: [fruitamil],
       video: null,
-      beforeAfter: { before: "/api/placeholder/400/300", after: "/api/placeholder/400/300" },
+      beforeAfter: { 
+        before: "/api/placeholder/400/300", 
+        after: "/api/placeholder/400/300",
+        images: [
+          { before: "/api/placeholder/400/300", after: "/api/placeholder/400/300", title: "Fruit Size Enhancement" },
+          { before: "/api/placeholder/400/300", after: "/api/placeholder/400/300", title: "Fruit Quality Improvement" },
+          { before: "/api/placeholder/400/300", after: "/api/placeholder/400/300", title: "Yield Increase" }
+        ]
+      },
       advantages: [
         "Increases fruit size by up to 35%",
         "Improves fruit set rate by 45%",
@@ -127,7 +156,15 @@ const initialState: ProductsState = {
       usage: "Mix 5-6ml per liter of water. Spray in early morning or evening, repeat weekly or as needed. Ensure complete coverage of plant surfaces including undersides of leaves.",
       images: [bugBaan],
       video: null,
-      beforeAfter: { before: "/api/placeholder/400/300", after: "/api/placeholder/400/300" },
+      beforeAfter: { 
+        before: "/api/placeholder/400/300", 
+        after: "/api/placeholder/400/300",
+        images: [
+          { before: "/api/placeholder/400/300", after: "/api/placeholder/400/300", title: "Pest Control Results" },
+          { before: "/api/placeholder/400/300", after: "/api/placeholder/400/300", title: "Plant Health Recovery" },
+          { before: "/api/placeholder/400/300", after: "/api/placeholder/400/300", title: "Damage Prevention" }
+        ]
+      },
       advantages: [
         "Controls 15+ common garden pests naturally",
         "Safe for children, pets, and beneficial insects",

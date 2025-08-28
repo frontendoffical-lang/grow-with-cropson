@@ -4,6 +4,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Star, Plus } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import AddReviewForm from './AddReviewForm';
 
 interface Review {
@@ -77,64 +78,84 @@ const ProductReviews = ({ productId }: ProductReviewsProps) => {
         <div className="flex items-center justify-center gap-4">
           <div className="flex items-center gap-2">
             {renderStars(5)}
-            <span className="text-sm text-muted-foreground">4.9/5 from 150+ reviews</span>
+            <span className="text-sm text-muted-foreground">4.9/5 from {reviewsList.length}+ reviews</span>
           </div>
         </div>
       </div>
 
-      <div className="flex justify-center mb-8">
-        <Button
-          onClick={() => setShowAddReview(!showAddReview)}
-          className="flex items-center gap-2"
-        >
-          <Plus className="w-4 h-4" />
-          {showAddReview ? 'Cancel' : 'Write a Review'}
-        </Button>
-      </div>
-
-      {showAddReview && (
-        <div className="mb-8">
-          <AddReviewForm 
-            productId={productId} 
-            onReviewAdded={handleReviewAdded}
-          />
-        </div>
-      )}
-
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {reviewsList.map((review) => (
-          <Card key={review.id} className="h-full">
-            <CardContent className="p-6 space-y-4">
-              <div className="flex items-center justify-between">
-                {renderStars(review.rating)}
-                {review.verified && (
-                  <span className="text-xs text-primary font-medium bg-primary/10 px-2 py-1 rounded-full">
-                    Verified
-                  </span>
-                )}
+      <div className="flex justify-center">
+        <Dialog>
+          <DialogTrigger asChild>
+            <Button variant="outline" size="lg" className="flex items-center gap-2">
+              <Star className="w-4 h-4" />
+              View All Reviews ({reviewsList.length})
+            </Button>
+          </DialogTrigger>
+          <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto">
+            <DialogHeader>
+              <DialogTitle className="text-xl font-heading">
+                Customer Reviews ({reviewsList.length})
+              </DialogTitle>
+            </DialogHeader>
+            
+            <div className="space-y-6">
+              <div className="flex justify-center">
+                <Button
+                  onClick={() => setShowAddReview(!showAddReview)}
+                  className="flex items-center gap-2"
+                >
+                  <Plus className="w-4 h-4" />
+                  {showAddReview ? 'Cancel' : 'Write a Review'}
+                </Button>
               </div>
-              
-              <p className="text-muted-foreground leading-relaxed">
-                "{review.comment}"
-              </p>
-              
-              <div className="flex items-center space-x-3 pt-4 border-t border-border">
-                <Avatar className="w-10 h-10">
-                  <AvatarImage src={review.avatar} />
-                  <AvatarFallback className="bg-primary/10 text-primary font-medium">
-                    {review.name.split(' ').map(n => n[0]).join('')}
-                  </AvatarFallback>
-                </Avatar>
-                <div>
-                  <p className="font-medium text-foreground text-sm">{review.name}</p>
-                  <p className="text-xs text-muted-foreground">
-                    {new Date(review.date).toLocaleDateString()}
-                  </p>
+
+              {showAddReview && (
+                <div className="mb-6">
+                  <AddReviewForm 
+                    productId={productId} 
+                    onReviewAdded={handleReviewAdded}
+                  />
                 </div>
+              )}
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {reviewsList.map((review) => (
+                  <Card key={review.id} className="h-full">
+                    <CardContent className="p-4 space-y-3">
+                      <div className="flex items-center justify-between">
+                        {renderStars(review.rating)}
+                        {review.verified && (
+                          <span className="text-xs text-primary font-medium bg-primary/10 px-2 py-1 rounded-full">
+                            Verified
+                          </span>
+                        )}
+                      </div>
+                      
+                      <p className="text-muted-foreground text-sm leading-relaxed">
+                        "{review.comment}"
+                      </p>
+                      
+                      <div className="flex items-center space-x-3 pt-3 border-t border-border">
+                        <Avatar className="w-8 h-8">
+                          <AvatarImage src={review.avatar} />
+                          <AvatarFallback className="bg-primary/10 text-primary font-medium text-xs">
+                            {review.name.split(' ').map(n => n[0]).join('')}
+                          </AvatarFallback>
+                        </Avatar>
+                        <div>
+                          <p className="font-medium text-foreground text-sm">{review.name}</p>
+                          <p className="text-xs text-muted-foreground">
+                            {new Date(review.date).toLocaleDateString()}
+                          </p>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                ))}
               </div>
-            </CardContent>
-          </Card>
-        ))}
+            </div>
+          </DialogContent>
+        </Dialog>
       </div>
     </div>
   );
