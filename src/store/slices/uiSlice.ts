@@ -18,14 +18,15 @@ const uiSlice = createSlice({
   reducers: {
     setLanguage: (state, action: PayloadAction<'en' | 'ur'>) => {
       state.language = action.payload;
-      state.isRTL = action.payload === 'ur';
+      // Don't change direction - keep LTR for both languages
+      state.isRTL = false;
       
       // Update i18n language
       i18n.changeLanguage(action.payload);
       
-      // Update document direction
+      // Update document language but keep LTR direction
       if (typeof document !== 'undefined') {
-        document.documentElement.dir = state.isRTL ? 'rtl' : 'ltr';
+        document.documentElement.dir = 'ltr';
         document.documentElement.lang = action.payload;
       }
       

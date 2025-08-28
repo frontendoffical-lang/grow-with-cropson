@@ -20,41 +20,42 @@ const Index = () => {
     {
       icon: Leaf,
       title: t('home.why.organic'),
-      description: 'Made from 100% natural and organic ingredients'
+      description: t('home.why.organicDesc')
     },
     {
       icon: Shield,
       title: t('home.why.chemicalFree'),
-      description: 'No synthetic chemicals or harmful additives'
+      description: t('home.why.chemicalFreeDesc')
     },
     {
       icon: Heart,
       title: t('home.why.noSideEffects'),
-      description: 'Safe for your family, pets, and environment'
+      description: t('home.why.noSideEffectsDesc')
     },
     {
       icon: Globe,
       title: t('home.why.ecoFriendly'),
-      description: 'Environmentally sustainable and responsible'
+      description: t('home.why.ecoFriendlyDesc')
     },
     {
       icon: BookCheck,
       title: t('home.why.trusted'),
-      description: 'Trusted by farmers worldwide for quality'
+      description: t('home.why.trustedDesc')
     },
     {
       icon: HeartHandshake,
       title: t('home.why.backed'),
-      description: 'Backed by University of Agricultural , Faisalabad'
+      description: t('home.why.backedDesc')
     },
     {
       icon: Rocket,
       title: t('home.why.Productivity'),
-      description: 'Boosts crop productivity by contoliiing pest and soil fertility'
-    }, {
+      description: t('home.why.ProductivityDesc')
+    },
+    {
       icon: Timer,
       title: t('home.why.lifetime'),
-      description: 'Extend the life expentency of plants'
+      description: t('home.why.lifetimeDesc')
     }
 
   ];

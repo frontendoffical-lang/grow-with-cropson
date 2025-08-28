@@ -69,7 +69,15 @@
       "trusted": "Proven & Trusted",
       "Productivity": "Boosts Crop Productivity",
       "backed": "Backed by Research",
-      "lifetime": "Life Period"
+      "lifetime": "Extended Life Period",
+      "organicDesc": "Made from 100% natural and organic ingredients",
+      "chemicalFreeDesc": "No synthetic chemicals or harmful additives",
+      "noSideEffectsDesc": "Safe for your family, pets, and environment",
+      "ecoFriendlyDesc": "Environmentally sustainable and responsible",
+      "trustedDesc": "Trusted by farmers worldwide for quality",
+      "backedDesc": "Backed by University of Agriculture, Faisalabad",
+      "ProductivityDesc": "Boosts crop productivity by controlling pest and soil fertility",
+      "lifetimeDesc": "Extends the life expectancy of plants"
     },
     "products": {
       "title": "Our Premium Products"

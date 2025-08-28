@@ -2,31 +2,51 @@ import { useTranslation } from 'react-i18next';
 import Header from '@/components/Header';
 import CartDrawer from '@/components/CartDrawer';
 import Footer from '@/components/Footer';
-import { Leaf, Shield, Heart, Globe } from 'lucide-react';
+import { Leaf, Shield, Heart, Globe, HeartHandshake, Rocket, Timer, BookCheck } from 'lucide-react';
 
 const About = () => {
   const { t } = useTranslation();
 
-  const features = [
+  const whyChooseUs = [
     {
       icon: Leaf,
-      title: t('badges.organic'),
-      description: 'Made from 100% natural and organic ingredients sourced from sustainable farms.'
+      title: t('home.why.organic'),
+      description: t('home.why.organicDesc')
     },
     {
       icon: Shield,
-      title: t('badges.chemicalFree'),
-      description: 'No synthetic chemicals, pesticides, or harmful additives in any of our products.'
+      title: t('home.why.chemicalFree'),
+      description: t('home.why.chemicalFreeDesc')
     },
     {
       icon: Heart,
-      title: t('badges.noSideEffects'),
-      description: 'Safe for your family, pets, and the environment with no harmful side effects.'
+      title: t('home.why.noSideEffects'),
+      description: t('home.why.noSideEffectsDesc')
     },
     {
       icon: Globe,
-      title: t('badges.ecoFriendly'),
-      description: 'Environmentally sustainable practices that protect and nurture our planet.'
+      title: t('home.why.ecoFriendly'),
+      description: t('home.why.ecoFriendlyDesc')
+    },
+    {
+      icon: BookCheck,
+      title: t('home.why.trusted'),
+      description: t('home.why.trustedDesc')
+    },
+    {
+      icon: HeartHandshake,
+      title: t('home.why.backed'),
+      description: t('home.why.backedDesc')
+    },
+    {
+      icon: Rocket,
+      title: t('home.why.Productivity'),
+      description: t('home.why.ProductivityDesc')
+    },
+    {
+      icon: Timer,
+      title: t('home.why.lifetime'),
+      description: t('home.why.lifetimeDesc')
     }
   ];
 
@@ -60,18 +80,18 @@ const About = () => {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {features.map((feature, index) => {
-                const Icon = feature.icon;
+              {whyChooseUs.map((item, index) => {
+                const Icon = item.icon;
                 return (
-                  <div key={index} className="text-center">
-                    <div className="w-16 h-16 bg-primary text-primary-foreground rounded-full flex items-center justify-center mx-auto mb-4">
-                      <Icon className="w-8 h-8" />
+                  <div key={index} className="text-center group">
+                    <div className="w-20 h-20 bg-gradient-to-br from-primary to-success text-white rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                      <Icon className="w-10 h-10" />
                     </div>
                     <h3 className="text-lg font-heading font-semibold text-foreground mb-3">
-                      {feature.title}
+                      {item.title}
                     </h3>
                     <p className="text-muted-foreground">
-                      {feature.description}
+                      {item.description}
                     </p>
                   </div>
                 );

@@ -1,7 +1,10 @@
+import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Card, CardContent } from '@/components/ui/card';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { Star } from 'lucide-react';
+import { Star, Plus } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import AddReviewForm from './AddReviewForm';
 
 interface Review {
   id: string;
@@ -19,9 +22,8 @@ interface ProductReviewsProps {
 
 const ProductReviews = ({ productId }: ProductReviewsProps) => {
   const { t } = useTranslation();
-
-  // Mock reviews data - in real app, this would come from API
-  const reviews: Review[] = [
+  const [showAddReview, setShowAddReview] = useState(false);
+  const [reviewsList, setReviewsList] = useState<Review[]>([
     {
       id: '1',
       name: 'Ahmed Hassan',
@@ -46,7 +48,12 @@ const ProductReviews = ({ productId }: ProductReviewsProps) => {
       date: '2024-01-05',
       verified: true
     }
-  ];
+  ]);
+
+  const handleReviewAdded = (newReview: Review) => {
+    setReviewsList(prev => [newReview, ...prev]);
+    setShowAddReview(false);
+  };
 
   const renderStars = (rating: number) => {
     return (
@@ -75,8 +82,27 @@ const ProductReviews = ({ productId }: ProductReviewsProps) => {
         </div>
       </div>
 
+      <div className="flex justify-center mb-8">
+        <Button
+          onClick={() => setShowAddReview(!showAddReview)}
+          className="flex items-center gap-2"
+        >
+          <Plus className="w-4 h-4" />
+          {showAddReview ? 'Cancel' : 'Write a Review'}
+        </Button>
+      </div>
+
+      {showAddReview && (
+        <div className="mb-8">
+          <AddReviewForm 
+            productId={productId} 
+            onReviewAdded={handleReviewAdded}
+          />
+        </div>
+      )}
+
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {reviews.map((review) => (
+        {reviewsList.map((review) => (
           <Card key={review.id} className="h-full">
             <CardContent className="p-6 space-y-4">
               <div className="flex items-center justify-between">

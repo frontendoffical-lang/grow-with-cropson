@@ -262,8 +262,13 @@ const ProductDetail = () => {
         {/* Before/After Comparison */}
         <div className="mb-16">
           <BeforeAfterSlider 
-            beforeImage={product.beforeAfter.before}
-            afterImage={product.beforeAfter.after}
+            images={[
+              {
+                before: product.beforeAfter.before,
+                after: product.beforeAfter.after,
+                title: `${product.name} Results`
+              }
+            ]}
             productName={product.name}
           />
         </div>
