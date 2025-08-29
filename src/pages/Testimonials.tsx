@@ -22,7 +22,7 @@ const Testimonials = () => {
               {t('home.testimonials.title')}
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Real experiences from our customers who have transformed their gardens with CROPSEN
+              {t('home.subtitle.testimonialsPage')}
             </p>
           </div>
         </section>
