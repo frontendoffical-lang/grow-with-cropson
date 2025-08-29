@@ -61,6 +61,16 @@
       "subtitle": "Premium organic plant care solutions that are chemical-free and safe for your family",
       "tagline": "From the Earth, For the Earth"
     },
+    "subtitle": {
+      "commitment": "Our commitment to organic excellence and environmental sustainability",
+      "discover": "Discover our range of premium organic plant care solutions",
+      "realExperiences": "Real experiences from customers who chose organic"
+    },
+    "cta": {
+      "shopNow": "Shop Now",
+      "getInTouch": "Get In Touch",
+      "readMoreReviews": "Read More Reviews"
+    },
     "why": {
       "title": "Why Choose CROPSEN?",
       "organic": "100% Organic Ingredients",

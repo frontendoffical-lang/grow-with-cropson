@@ -18,8 +18,8 @@ const LanguageSwitch = () => {
           "text-sm font-medium px-3 py-1 rounded-full transition-colors",
           currentLanguage === 'en' ? "bg-primary text-primary-foreground" : "text-muted-foreground"
         )}
-      >
-        English
+       >
+        EN
       </span>
       <Switch
         checked={currentLanguage === 'ur'}
@@ -31,8 +31,8 @@ const LanguageSwitch = () => {
           "text-sm font-medium px-3 py-1 rounded-full transition-colors",
           currentLanguage === 'ur' ? "bg-primary text-primary-foreground" : "text-muted-foreground"
         )}
-      >
-        اردو
+       >
+        UR
       </span>
     </div>
   );

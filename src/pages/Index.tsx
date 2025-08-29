@@ -80,7 +80,7 @@ const Index = () => {
                 {t('home.why.title')}
               </h2>
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                Our commitment to organic excellence and environmental sustainability
+                {t('home.subtitle.commitment')}
               </p>
             </div>
 
@@ -113,7 +113,7 @@ const Index = () => {
                 {t('home.products.title')}
               </h2>
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
-                Discover our range of premium organic plant care solutions
+                {t('home.subtitle.discover')}
               </p>
             </div>
 
@@ -137,7 +137,7 @@ const Index = () => {
                 {t('home.testimonials.title')}
               </h2>
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                Real experiences from customers who chose organic
+                {t('home.subtitle.realExperiences')}
               </p>
             </div>
 
@@ -146,7 +146,7 @@ const Index = () => {
             <div className="text-center mt-12">
               <Link to="/testimonials">
                 <ButtonOrganic variant="outline" size="lg">
-                  Read More Reviews
+                  {t('home.cta.readMoreReviews')}
                 </ButtonOrganic>
               </Link>
             </div>
@@ -169,7 +169,7 @@ const Index = () => {
                   size="lg"
                   className="flex items-center space-x-2"
                 >
-                  <span>Shop Now</span>
+                  <span>{t('home.cta.shopNow')}</span>
                   <ArrowRight className="w-5 h-5" />
                 </ButtonOrganic>
               </Link>
@@ -179,7 +179,7 @@ const Index = () => {
                   size="lg"
                   className="border-white text-white hover:bg-white hover:text-primary"
                 >
-                  Get In Touch
+                  {t('home.cta.getInTouch')}
                 </ButtonOrganic>
               </Link>
             </div>
