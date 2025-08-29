@@ -58,7 +58,8 @@
   "home": {
     "hero": {
       "title": "Grow Naturally with CROPSEN",
-      "subtitle": "Premium organic plant care solutions that are chemical-free and safe for your family"
+      "subtitle": "Premium organic plant care solutions that are chemical-free and safe for your family",
+      "tagline": "From the Earth, For the Earth"
     },
     "why": {
       "title": "Why Choose CROPSEN?",
@@ -120,7 +121,10 @@
   "about": {
     "title": "About CROPSEN",
     "subtitle": "We are dedicated to providing premium organic plant care solutions that are safe, effective, and environmentally responsible.",
+    "tagline": "From the Earth, For the Earth",
     "ourStory": "Our Story",
+    "ourMission": "Our Mission",
+    "missionText": "To revolutionize agriculture through innovative organic solutions that enhance crop productivity while preserving the environment for future generations. We believe in sustainable farming practices that benefit farmers, consumers, and the planet.",
     "timeline": {
       "title": "Our Journey",
       "2020": {

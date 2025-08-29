@@ -58,44 +58,36 @@ const About = () => {
         {/* Hero Section */}
         <section className="py-10 bg-gradient-to-b from-primary-light to-background">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 className="text-4xl md:text-6xl font-heading font-bold text-foreground mb-6">
+            <h1 className="text-4xl md:text-6xl font-heading font-bold text-foreground mb-4">
               {t('about.title')}
             </h1>
+            <p className="text-lg text-primary font-medium mb-6">
+              {t('about.tagline')}
+            </p>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
               {t('about.subtitle')}
             </p>
           </div>
         </section>
 
-        {/* Features Section */}
+        {/* Our Mission Section */}
         <section className="py-10">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-4">
-                {t('home.why.title')}
-              </h2>
-              <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                Our commitment to organic excellence sets us apart in the industry
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {whyChooseUs.map((item, index) => {
-                const Icon = item.icon;
-                return (
-                  <div key={index} className="text-center group">
-                    <div className="w-20 h-20 bg-gradient-to-br from-primary to-success text-white rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                      <Icon className="w-10 h-10" />
-                    </div>
-                    <h3 className="text-lg font-heading font-semibold text-foreground mb-3">
-                      {item.title}
-                    </h3>
-                    <p className="text-muted-foreground">
-                      {item.description}
-                    </p>
-                  </div>
-                );
-              })}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-6">
+                  {t('about.ourMission')}
+                </h2>
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  {t('about.missionText')}
+                </p>
+              </div>
+              <div className="relative">
+                <div className="bg-gradient-to-r from-primary/10 to-success/10 rounded-2xl p-8 text-center">
+                  <div className="text-6xl font-bold text-primary mb-4">100%</div>
+                  <div className="text-xl font-semibold text-foreground">{t('badges.organic')}</div>
+                </div>
+              </div>
             </div>
           </div>
         </section>

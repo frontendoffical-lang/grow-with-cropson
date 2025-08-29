@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { ShoppingCart, Globe, Menu, X } from 'lucide-react';
+import { ShoppingCart, Menu, X } from 'lucide-react';
 import { useAppSelector, useAppDispatch } from '@/store';
 import { selectCartCount, setDrawerOpen } from '@/store/slices/cartSlice';
-import { selectLanguage, setLanguage } from '@/store/slices/uiSlice';
 import { ButtonOrganic } from './ui/button-organic';
+import LanguageSwitch from './LanguageSwitch';
 import { cn } from '@/lib/utils';
 
 const Header = () => {
@@ -14,7 +14,6 @@ const Header = () => {
   const location = useLocation();
   const dispatch = useAppDispatch();
   const cartCount = useAppSelector(selectCartCount);
-  const currentLanguage = useAppSelector(selectLanguage);
 
   const navigation = [
     { name: t('nav.home'), href: '/' },
@@ -24,9 +23,6 @@ const Header = () => {
     { name: t('nav.contact'), href: '/contact' },
   ];
 
-  const toggleLanguage = () => {
-    dispatch(setLanguage(currentLanguage === 'en' ? 'ur' : 'en'));
-  };
 
   const openCart = () => {
     dispatch(setDrawerOpen(true));
@@ -70,16 +66,8 @@ const Header = () => {
 
           {/* Right side buttons */}
           <div className="flex items-center space-x-4">
-            {/* Language Toggle */}
-            <ButtonOrganic
-              variant="ghost"
-              size="sm"
-              onClick={toggleLanguage}
-              className="flex items-center space-x-1"
-            >
-              <Globe className="w-4 h-4" />
-              <span>{currentLanguage.toUpperCase()}</span>
-            </ButtonOrganic>
+            {/* Language Switch */}
+            <LanguageSwitch />
 
             {/* Cart */}
             <ButtonOrganic
