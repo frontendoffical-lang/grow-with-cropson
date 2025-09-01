@@ -13,6 +13,7 @@ export interface Product {
   highlights: string[];
   shortDesc: string;
   longDesc?: string;
+  longDescUrdu?: string;
   usage?: string;
   images: string[];
   video?: string;
@@ -26,6 +27,11 @@ export interface Product {
     }>;
   };
   price?: number;
+  volumes?: Array<{
+    size: string;
+    price: number;
+    hidden?: boolean;
+  }>;
   advantages?: string[];
   specifications?: Record<string, string>;
 }
@@ -40,14 +46,20 @@ const initialState: ProductsState = {
   products: [
     {
       id: "mr-flowers",
-      name: "Mr. Flower",
-      tagline: "Grow More Flowers Naturally",
+      name: "Mr. Flowers",
+      tagline: "Flowering Stimulant",
       highlights: ["Enhances flowering", "Reduces flower drop", "Extends bloom life","improve folwer shelf life","higher production"],
       shortDesc: "Helps plants grow more flowers that last longer.",
-      longDesc: "Mr. Flowers is a revolutionary organic flowering booster that naturally enhances your plants' blooming capacity. Made from premium botanical extracts sourced from sustainable farms, this advanced formula contains natural growth stimulants that work in harmony with your plants' biological processes. The unique blend includes seaweed extracts, amino acids, and organic minerals that promote cellular division in flower buds, resulting in dramatically increased bloom production. Unlike synthetic alternatives, Mr. Flowers works gradually to build long-term plant health while delivering immediate flowering results. The formula also contains natural preservatives that help flowers maintain their vibrant colors and fresh appearance for extended periods, making it perfect for both commercial growers and home gardeners who want stunning, long-lasting blooms.",
-      usage: "Mix 2-3ml per liter of water. Apply during early flowering stage and repeat every 15 days. For best results, apply in early morning or late evening when temperatures are cooler.",
+      longDesc: "Transform your garden into a blooming paradise with Mr. Flowers, a natural flowering stimulant that promotes profuse, long-lasting blooms. This gentle yet effective formula reduces premature flower drop, extends blooming periods, and encourages healthy, uniform flower development. Specially designed for ornamental and flowering plants like roses, marigolds, and jasmine, Mr. Flowers ensures your garden stays vibrant and colorful for longer. Mix 5-10 mL per liter and apply during pre-flowering and flowering stages for spectacular results.",
+      longDescUrdu: "مسٹر فلاورز کے ساتھ اپنے باغ کو کھلتے پھولوں کی جنت میں تبدیل کر دیں، یہ قدرتی پھولوں کا محرک ہے جو بھرپور، طویل المیعاد کھلنے کو فروغ دیتا ہے۔ یہ نرم لیکن مؤثر فارمولا قبل از وقت پھولوں کا گرنا کم کرتا ہے، کھلنے کی مدت بڑھاتا ہے، اور صحت مند، یکسان پھولوں کی نشوونما کی حوصلہ افزائی کرتا ہے۔ خاص طور پر آرائشی اور پھولوں کے پودوں جیسے گلاب، گیندا، اور چمیلی کے لیے ڈیزائن کیا گیا، مسٹر فلاورز یقینی بناتا ہے کہ آپ کا باغ زیادہ دیر تک جیورنت اور رنگ برنگا رہے۔ 5-10 ملی لٹر فی لٹر ملا کر پھول آنے سے پہلے اور پھول آنے کے مراحل میں لگائیں اور شاندار نتائج حاصل کریں۔",
+      usage: "Mix 5-10 mL per liter of water. Apply during pre-flowering and flowering stages. For best results, apply in early morning or late evening when temperatures are cooler.",
       images: [mrFlower],
       video: null,
+      volumes: [
+        { size: "50 mL", price: 300, hidden: true },
+        { size: "500 mL", price: 1500, hidden: true },
+        { size: "1000 mL", price: 2500, hidden: true }
+      ],
       beforeAfter: { 
         before: "/api/placeholder/400/300", 
         after: "/api/placeholder/400/300",
@@ -70,20 +82,26 @@ const initialState: ProductsState = {
         "NPK Ratio": "2-4-6",
         "pH Level": "6.5-7.0",
         "Shelf Life": "24 months",
-        "Application Rate": "2-3ml per liter",
+        "Application Rate": "5-10ml per liter",
         "Coverage": "500ml covers 100 square meters"
       }
     },
     {
       id: "dr-green",
       name: "Dr. Green",
-      tagline: "The secret to lush green plants",
+      tagline: "Plant Hormonal Therapy",
       highlights: ["Lush green growth", "Boosts vigor", "Enhances root growth"],
       shortDesc: "Supports natural growth and strong roots.",
-      longDesc: "Dr. Green provides comprehensive plant hormonal therapy that promotes vigorous vegetative growth through advanced biotechnology. This scientifically formulated solution contains naturally derived plant hormones including auxins, cytokinins, and gibberellins that work synergistically to optimize plant development. The unique formula strengthens root systems at the cellular level, promoting extensive root networks that improve nutrient uptake and water absorption. Rich in chelated micronutrients and organic acids, Dr. Green ensures maximum bioavailability of essential nutrients, resulting in robust stem development, increased leaf production, and enhanced chlorophyll synthesis. The treatment also includes natural stress-resistance compounds that help plants adapt to environmental challenges while maintaining optimal growth rates throughout the growing season.",
-      usage: "Mix 3-4ml per liter of water. Apply every 10-14 days during growing season. Apply as soil drench for root development or foliar spray for quick absorption.",
+      longDesc: "Give your plants the boost they need with Dr. Green, a natural hormonal formula that stimulates robust growth and vibrant health. This plant-extract-based solution enhances chlorophyll production for lush green foliage, promotes stronger root development, and helps plants recover from environmental stress. Ideal for all crops during early growth stages, Dr. Green transforms weak, stressed plants into vigorous, healthy specimens. Mix 10 mL per liter of water and watch your plants develop rich green canopies and stronger root systems.",
+      longDescUrdu: "ڈاکٹر گرین کے ساتھ اپنے پودوں کو وہ طاقت دیں جس کی انہیں ضرورت ہے، یہ قدرتی ہارمونل فارمولا ہے جو مضبوط نشرونما اور شاندار صحت کو متحرک کرتا ہے۔ یہ پودوں کے عرق پر مبنی حل کلوروفل کی پیداوار بڑھاتا ہے، مضبوط جڑوں کی نشرونما کو فروغ دیتا ہے، اور پودوں کو ماحولیاتی دباؤ سے بحالی میں مدد کرتا ہے۔ ابتدائی نشرونما کے مرحلے میں تمام فصلوں کے لیے مثالی، ڈاکٹر گرین کمزور، دباؤ زدہ پودوں کو طاقتور، صحت مند نشرونما میں تبدیل کر دیتا ہے۔ 10 ملی لٹر فی لٹر پانی میں ملائیں اور اپنے پودوں کو بھرپور سبز چھتری اور مضبوط جڑوں کا نظام تیار کرتے ہوئے دیکھیں۔",
+      usage: "Mix 10 mL per liter of water. Apply every 10-14 days during growing season. Apply as soil drench for root development or foliar spray for quick absorption.",
       images: [drGreen],
       video: null,
+      volumes: [
+        { size: "50 mL", price: 300, hidden: true },
+        { size: "500 mL", price: 1500, hidden: true },
+        { size: "1000 mL", price: 2500, hidden: true }
+      ],
       beforeAfter: { 
         before: "https://herbal-shield.vercel.app/images/extracted_images/slide6_image7.jpg", 
         after: "/api/placeholder/400/300",
@@ -106,20 +124,26 @@ const initialState: ProductsState = {
         "NPK Ratio": "4-2-3",
         "pH Level": "6.0-6.8",
         "Shelf Life": "24 months",
-        "Application Rate": "3-4ml per liter",
+        "Application Rate": "10ml per liter",
         "Coverage": "500ml covers 150 square meters"
       }
     },
     {
       id: "fruitamil",
       name: "Fruitamil",
-      tagline: "Nutrition booster",
+      tagline: "Premium Nutrition Booster",
       highlights: ["Better fruit set", "Bigger size", "Color & sweetness"],
       shortDesc: "Improves fruit quality and yield.",
-      longDesc: "Fruitamil is a specialized nutrition booster designed to enhance fruit development through targeted nutritional support during critical growth phases. This advanced formula combines essential macro and micronutrients with natural fruit-enhancing compounds that optimize fruit setting, development, and maturation processes. The unique blend includes calcium for cell wall strength, potassium for sugar transport, and boron for proper fruit formation, along with natural enzymes that improve nutrient absorption and utilization. Fruitamil's proprietary formula also contains organic compounds that enhance the natural sugar accumulation process, resulting in sweeter, more flavorful fruits with improved texture and shelf life. The balanced nutrition profile ensures uniform fruit sizing while maintaining the natural taste characteristics that make homegrown produce superior to commercial alternatives.",
-      usage: "Mix 4-5ml per liter of water. Apply from fruit setting stage, repeat every 20 days. Continue applications until 2 weeks before harvest for optimal results.",
+      longDesc: "Maximize your harvest quality and yield with Fruitamil, a scientifically formulated nutrition booster designed specifically for fruit-bearing and vegetable crops. This precision nutrition formula improves fruit setting and retention, enhances fruit size and uniformity, and intensifies both color and sweetness. Perfect for citrus, mango, grapes, tomatoes, and other fruiting and vegetable crops, Fruitamil helps you achieve premium, marketable produce that commands better prices. Apply 5-10 mL per liter during fruit-setting and development stages for exceptional results.",
+      longDescUrdu: "فروٹامل کے ساتھ اپنی فصل کے معیار اور پیداوار کو زیادہ سے زیادہ بنائیں، یہ سائنسی طور پر تیار کردہ غذائی بوسٹر خاص طور پر پھل دار فصلوں اور سبزیوں کے لیے ڈیزائن کیا گیا ہے۔ یہ درست غذائیت کا فارمولا پھلوں کی سیٹنگ اور برقراری کو بہتر بناتا ہے، پھلوں کا سائز اور یکسانیت بڑھاتا ہے، اور رنگ اور مٹھاس دونوں کو تیز کرتا ہے۔ سٹرس، آم، انگور، ٹماٹر، اور دیگر پھل دار فصلوں اور سبزیوں کے لیے بہترین، فروٹامل آپ کو پریمیم، قابل فروخت پیداوار حاصل کرنے میں مدد کرتا ہے جو بہتر قیمتوں کا مطالبہ کرتی ہے۔ پھل سیٹنگ اور نشوونما کے مراحل میں 5-10 ملی لٹر فی لٹر لگائیں اور غیر معمولی نتائج حاصل کریں۔",
+      usage: "Mix 5-10 mL per liter of water. Apply from fruit setting stage, repeat every 20 days. Continue applications until 2 weeks before harvest for optimal results.",
       images: [fruitamil],
       video: null,
+      volumes: [
+        { size: "50 mL", price: 300, hidden: true },
+        { size: "500 mL", price: 1500, hidden: true },
+        { size: "1000 mL", price: 2500, hidden: true }
+      ],
       beforeAfter: { 
         before: "/api/placeholder/400/300", 
         after: "/api/placeholder/400/300",
@@ -142,20 +166,26 @@ const initialState: ProductsState = {
         "NPK Ratio": "1-5-8",
         "pH Level": "6.2-7.2",
         "Shelf Life": "24 months",
-        "Application Rate": "4-5ml per liter",
+        "Application Rate": "5-10ml per liter",
         "Coverage": "500ml covers 80 square meters"
       }
     },
     {
       id: "herbal-shield",
       name: "Organic Herbal Shield",
-      tagline: "Natural pest control",
+      tagline: "Natural Crop Protection",
       highlights: ["Plant-based", "Safe for edibles", "Eco-friendly"],
       shortDesc: "Keeps pests away without chemicals.",
-      longDesc: "Organic Herbal Shield provides comprehensive pest protection using an innovative blend of plant-based essential oils and natural deterrents that create an invisible barrier against harmful insects while remaining completely safe for beneficial organisms. This revolutionary formula combines neem oil extracts, peppermint oil, and garlic compounds with natural surfactants that ensure excellent coverage and penetration. The unique multi-action approach works by disrupting pest feeding patterns, interfering with reproduction cycles, and creating an inhospitable environment for common garden pests including aphids, spider mites, whiteflies, and caterpillars. Unlike synthetic pesticides, Herbal Shield breaks down naturally in the environment, leaving no harmful residues on edible crops or in soil, making it the perfect choice for organic farming and home gardens where safety is paramount.",
-      usage: "Mix 5-6ml per liter of water. Spray in early morning or evening, repeat weekly or as needed. Ensure complete coverage of plant surfaces including undersides of leaves.",
+      longDesc: "Protect your crops the natural way with Herbal Shield, an organic plant-extract-based pesticide that delivers powerful pest control without harmful chemicals. This eco-friendly solution effectively repels aphids, thrips, whiteflies, and caterpillars while also providing natural fungicide protection. Safe for humans, animals, and beneficial pollinators, Herbal Shield is perfect for fruits, vegetables, ornamentals, and field crops. Simply mix 5-10 mL per liter of water and spray for comprehensive crop protection that won't harm the environment.",
+      longDescUrdu: "ہربل شیلڈ کے ساتھ اپنی فصلوں کو قدرتی طریقے سے محفوظ رکھیں، یہ پودوں کے عرق پر مبنی نامیاتی کیڑے مار دوا ہے جو نقصان دہ کیمیکلز کے بغیر طاقتور کیڑے مکوڑوں کا کنٹرول فراہم کرتا ہے۔ یہ ماحول دوست حل مؤثر طریقے سے شپش، تھرپس، سفید مکھی، اور کیٹرپلر کو بھگاتا ہے اور قدرتی فنجی سائیڈ کی حفاظت بھی فراہم کرتا ہے۔ انسانوں، جانوروں، اور مفید پولینیٹرز کے لیے محفوظ، ہربل شیلڈ پھلوں، سبزیوں، آرائشی پودوں، اور کھیتی کی فصلوں کے لیے بہترین ہے۔ صرف 5-10 ملی لٹر فی لٹر پانی میں ملا کر چھڑکیں اور جامع فصل تحفظ حاصل کریں جو ماحول کو نقصان نہیں پہنچائے گا۔",
+      usage: "Mix 5-10 mL per liter of water. Spray in early morning or evening, repeat weekly or as needed. Ensure complete coverage of plant surfaces including undersides of leaves.",
       images: [bugBaan],
       video: null,
+      volumes: [
+        { size: "50 mL", price: 300, hidden: true },
+        { size: "500 mL", price: 1500, hidden: true },
+        { size: "1000 mL", price: 2500, hidden: true }
+      ],
       beforeAfter: { 
         before: "/api/placeholder/400/300", 
         after: "/api/placeholder/400/300",
@@ -178,7 +208,7 @@ const initialState: ProductsState = {
         "Concentration": "Concentrated formula - dilute before use",
         "pH Level": "6.8-7.5",
         "Shelf Life": "36 months",
-        "Application Rate": "5-6ml per liter",
+        "Application Rate": "5-10ml per liter",
         "Coverage": "500ml covers 200 square meters"
       }
     }

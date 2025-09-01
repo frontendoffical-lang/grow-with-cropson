@@ -20,7 +20,7 @@ import { MessageCircle, ShoppingCart, CheckCircle, Star, Award, Shield, Leaf } f
 
 const ProductDetail = () => {
   const { slug } = useParams<{ slug: string }>();
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const dispatch = useAppDispatch();
   const product = useAppSelector(state => 
     slug ? selectProductBySlug(state, slug) : null
@@ -192,7 +192,9 @@ const ProductDetail = () => {
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <p className="text-foreground text-lg leading-relaxed">
-                    {product.longDesc}
+                    {i18n.language === 'ur' && product.longDescUrdu 
+                      ? product.longDescUrdu 
+                      : product.longDesc}
                   </p>
                 </CardContent>
               </Card>
