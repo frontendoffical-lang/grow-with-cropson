@@ -100,6 +100,20 @@ const ProductCard = ({ product, className }: ProductCardProps) => {
           ))}
         </div>
 
+        {/* Volume Options */}
+        {product.volumes && product.volumes.length > 0 && (
+          <div className="space-y-2">
+            <p className="text-sm font-medium text-foreground">{t('product.availableVolumes')}:</p>
+            <div className="flex flex-wrap gap-2">
+              {product.volumes.filter(vol => !vol.hidden).map((volume, index) => (
+                <Badge key={index} variant="outline" className="text-xs">
+                  {volume.size}
+                </Badge>
+              ))}
+            </div>
+          </div>
+        )}
+
         {/* Action Buttons */}
         <div className="flex flex-col space-y-2 pt-2">
           <ButtonOrganic

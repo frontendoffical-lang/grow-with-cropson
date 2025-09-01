@@ -143,6 +143,28 @@ const ProductDetail = () => {
               </CardContent>
             </Card>
 
+            {/* Volume Options */}
+            {product.volumes && product.volumes.length > 0 && (
+              <Card>
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2">
+                    <Award className="w-5 h-5 text-primary" />
+                    {t('productDetail.availableVolumes')}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid grid-cols-1 gap-3">
+                    {product.volumes.filter(vol => !vol.hidden).map((volume, index) => (
+                      <div key={index} className="flex items-center justify-between p-3 border rounded-lg hover:border-primary/30 transition-colors">
+                        <span className="font-medium text-foreground">{volume.size}</span>
+                        <Badge variant="secondary">{t('product.contactForPrice')}</Badge>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            )}
+
             {/* Action Buttons */}
             <div className="space-y-4">
               <ButtonOrganic

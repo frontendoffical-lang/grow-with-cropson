@@ -24,6 +24,10 @@
     "continueShopping": "Continue Shopping",
     "clearCart": "Clear Cart"
   },
+  "product": {
+    "availableVolumes": "Available Volumes",
+    "contactForPrice": "Contact for Price"
+  },
   "form": {
     "name": "Name",
     "email": "Email", 
@@ -116,6 +120,7 @@
     "rating": "Rating",
     "reviews": "Reviews",
     "keyBenefits": "Key Benefits",
+    "availableVolumes": "Available Volumes",
     "advantages": "Advantages",
     "specifications": "Technical Specifications",
     "description": "Description",

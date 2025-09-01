@@ -24,6 +24,10 @@
     "continueShopping": "خریداری جاری رکھیں",
     "clearCart": "کارٹ خالی کریں"
   },
+  "product": {
+    "availableVolumes": "دستیاب حجم",
+    "contactForPrice": "قیمت کے لیے رابطہ کریں"
+  },
   "form": {
     "name": "نام",
     "email": "ای میل",
@@ -116,6 +120,7 @@
     "rating": "ریٹنگ",
     "reviews": "جائزے",
     "keyBenefits": "اہم فوائد",
+    "availableVolumes": "دستیاب حجم",
     "advantages": "فوائد",
     "specifications": "تکنیکی تفصیلات",
     "description": "تفصیل",
