@@ -102,10 +102,10 @@ const ProductDetail = () => {
                       <Star key={i} className="w-5 h-5 fill-primary text-primary" />
                     ))}
                   </div>
-                  <span className="text-lg font-semibold text-foreground">4.9</span>
+                  <span className="text-lg font-semibold text-foreground">{product.rating || 4.9}</span>
                 </div>
                 <div className="h-4 w-px bg-border"></div>
-                <span className="text-sm text-muted-foreground">150+ {t('productDetail.reviews')}</span>
+                <span className="text-sm text-muted-foreground">{product.reviewCount || 150}+ {t('productDetail.reviews')}</span>
               </div>
             </div>
 
@@ -230,7 +230,9 @@ const ProductDetail = () => {
                 <CardContent>
                   <div className="bg-primary/5 border border-primary/20 rounded-xl p-6">
                     <p className="text-foreground text-lg leading-relaxed">
-                      {product.usage}
+                      {i18n.language === 'ur' && product.usageUrdu 
+                        ? product.usageUrdu 
+                        : product.usage}
                     </p>
                   </div>
                 </CardContent>
@@ -247,7 +249,11 @@ const ProductDetail = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       {Object.entries(product.specifications).map(([key, value]) => (
                         <div key={key} className="flex flex-col space-y-2 p-4 border rounded-lg hover:border-primary/30 transition-colors">
-                          <dt className="text-sm font-medium text-muted-foreground uppercase tracking-wider">{key}</dt>
+                          <dt className="text-sm font-medium text-muted-foreground uppercase tracking-wider">
+                            {i18n.language === 'ur' && t(`productDetail.specifications.${key}`) !== `productDetail.specifications.${key}` 
+                              ? t(`productDetail.specifications.${key}`) 
+                              : key}
+                          </dt>
                           <dd className="text-lg font-semibold text-foreground">{value}</dd>
                         </div>
                       ))}

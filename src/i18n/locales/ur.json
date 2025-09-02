@@ -132,7 +132,16 @@
     "beforeAfter": "پہلے اور بعد",
     "comparison": "مصنوعات کا موازنہ",
     "readyToTransform": "اپنے باغ کو تبدیل کرنے کے لیے تیار ہیں؟",
-    "joinCustomers": "ہزاروں مطمئن گاہکوں میں شامل ہوں جو بھروسہ کرتے ہیں"
+    "joinCustomers": "ہزاروں مطمئن گاہکوں میں شامل ہوں جو بھروسہ کرتے ہیں",
+    "specifications": {
+      "Active Ingredients": "فعال اجزاء",
+      "NPK Ratio": "این پی کے تناسب",
+      "pH Level": "پی ایچ لیول",
+      "Shelf Life": "مدتِ استعمال",
+      "Application Rate": "اطلاق کی شرح",
+      "Coverage": "کوریج",
+      "Concentration": "ارتکاز"
+    }
   },
   "about": {
     "title": "کروپسین کے بارے میں",

@@ -132,7 +132,16 @@
     "beforeAfter": "Before & After",
     "comparison": "Product Comparison",
     "readyToTransform": "Ready to Transform Your Garden?",
-    "joinCustomers": "Join thousands of satisfied customers who trust"
+    "joinCustomers": "Join thousands of satisfied customers who trust",
+    "specifications": {
+      "Active Ingredients": "Active Ingredients",
+      "NPK Ratio": "NPK Ratio",
+      "pH Level": "pH Level",
+      "Shelf Life": "Shelf Life",
+      "Application Rate": "Application Rate",
+      "Coverage": "Coverage",
+      "Concentration": "Concentration"
+    }
   },
   "about": {
     "title": "About CROPSEN",
