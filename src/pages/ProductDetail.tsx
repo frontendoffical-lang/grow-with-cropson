@@ -265,16 +265,37 @@ const ProductDetail = () => {
                 <CardContent className="space-y-6">
                   <div className="space-y-4">
                     <div className="border rounded-lg p-4">
-                      <h4 className="font-semibold text-foreground mb-2">How often should I apply this product?</h4>
-                      <p className="text-muted-foreground">For best results, apply every 10-15 days during the growing season. Adjust frequency based on plant response and growing conditions.</p>
+                      <h4 className="font-semibold text-foreground mb-2">
+                        {i18n.language === 'ur' ? 'میں اس پروڈکٹ کو کتنی بار لگاؤں؟' : 'How often should I apply this product?'}
+                      </h4>
+                      <p className="text-muted-foreground">
+                        {i18n.language === 'ur' 
+                          ? 'بہترین نتائج کے لیے، بڑھنے کے موسم میں ہر 10-15 دنوں میں لگائیں۔ پودے کے ردعمل اور بڑھنے کی حالات کی بنیاد پر تعدد کو ایڈجسٹ کریں۔'
+                          : 'For best results, apply every 10-15 days during the growing season. Adjust frequency based on plant response and growing conditions.'
+                        }
+                      </p>
                     </div>
                     <div className="border rounded-lg p-4">
-                      <h4 className="font-semibold text-foreground mb-2">Is it safe for edible plants?</h4>
-                      <p className="text-muted-foreground">Yes, all our products are 100% organic and safe for use on edible plants. No harmful chemicals or residues.</p>
+                      <h4 className="font-semibold text-foreground mb-2">
+                        {i18n.language === 'ur' ? 'کیا یہ کھانے والے پودوں کے لیے محفوظ ہے؟' : 'Is it safe for edible plants?'}
+                      </h4>
+                      <p className="text-muted-foreground">
+                        {i18n.language === 'ur'
+                          ? 'جی ہاں، ہماری تمام پروڈکٹس 100% آرگینک ہیں اور کھانے والے پودوں پر استعمال کے لیے محفوظ ہیں۔ کوئی نقصان دہ کیمیکل یا باقیات نہیں۔'
+                          : 'Yes, all our products are 100% organic and safe for use on edible plants. No harmful chemicals or residues.'
+                        }
+                      </p>
                     </div>
                     <div className="border rounded-lg p-4">
-                      <h4 className="font-semibold text-foreground mb-2">Can I mix it with other fertilizers?</h4>
-                      <p className="text-muted-foreground">Our products are compatible with most organic fertilizers. However, we recommend testing on a small area first or consulting our support team.</p>
+                      <h4 className="font-semibold text-foreground mb-2">
+                        {i18n.language === 'ur' ? 'کیا میں اسے دوسری کھادوں کے ساتھ ملا سکتا ہوں؟' : 'Can I mix it with other fertilizers?'}
+                      </h4>
+                      <p className="text-muted-foreground">
+                        {i18n.language === 'ur'
+                          ? 'ہماری پروڈکٹس زیادہ تر آرگینک کھادوں کے ساتھ مطابقت رکھتی ہیں۔ تاہم، ہم پہلے چھوٹے علاقے میں ٹیسٹ کرنے یا ہماری سپورٹ ٹیم سے مشورہ کرنے کی سفارش کرتے ہیں۔'
+                          : 'Our products are compatible with most organic fertilizers. However, we recommend testing on a small area first or consulting our support team.'
+                        }
+                      </p>
                     </div>
                   </div>
                 </CardContent>
@@ -311,24 +332,24 @@ const ProductDetail = () => {
             {t('productDetail.joinCustomers')} {product.name}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
-            <ButtonOrganic
-              size="lg"
-              onClick={handleAddToCart}
-              className="bg-white text-primary hover:bg-white/90 flex items-center justify-center space-x-2"
-            >
-              <ShoppingCart className="w-5 h-5" />
-              <span>Add to Cart</span>
-            </ButtonOrganic>
-            
-            <ButtonOrganic
-              variant="whatsapp"
-              size="lg"
-              onClick={handleWhatsAppOrder}
-              className="border-white text-white hover:bg-white/10 flex items-center justify-center space-x-2"
-            >
-              <MessageCircle className="w-5 h-5" />
-              <span>Order Now</span>
-            </ButtonOrganic>
+                <ButtonOrganic
+                  size="lg"
+                  onClick={handleAddToCart}
+                  className="bg-white text-primary hover:bg-white/90 flex items-center justify-center space-x-2"
+                >
+                  <ShoppingCart className="w-5 h-5" />
+                  <span>{t('cta.addToCart')}</span>
+                </ButtonOrganic>
+                
+                <ButtonOrganic
+                  variant="whatsapp"
+                  size="lg"
+                  onClick={handleWhatsAppOrder}
+                  className="border-white text-white hover:bg-white/10 flex items-center justify-center space-x-2"
+                >
+                  <MessageCircle className="w-5 h-5" />
+                  <span>{t('cta.orderWhatsapp')}</span>
+                </ButtonOrganic>
           </div>
         </div>
       </main>
