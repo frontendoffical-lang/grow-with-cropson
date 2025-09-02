@@ -154,7 +154,7 @@ const ProductDetail = () => {
                 </CardHeader>
                 <CardContent>
                   <div className="grid grid-cols-1 gap-3">
-                    {product.volumes.filter(vol => !vol.hidden).map((volume, index) => (
+                    {product.volumes.map((volume, index) => (
                       <div key={index} className="flex items-center justify-between p-3 border rounded-lg hover:border-primary/30 transition-colors">
                         <span className="font-medium text-foreground">{volume.size}</span>
                         <Badge variant="secondary">{t('product.contactForPrice')}</Badge>

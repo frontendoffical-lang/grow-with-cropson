@@ -105,7 +105,7 @@ const ProductCard = ({ product, className }: ProductCardProps) => {
           <div className="space-y-2">
             <p className="text-sm font-medium text-foreground">{t('product.availableVolumes')}:</p>
             <div className="flex flex-wrap gap-2">
-              {product.volumes.filter(vol => !vol.hidden).map((volume, index) => (
+              {product.volumes.map((volume, index) => (
                 <Badge key={index} variant="outline" className="text-xs">
                   {volume.size}
                 </Badge>
