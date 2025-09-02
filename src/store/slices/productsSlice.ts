@@ -17,6 +17,8 @@ export interface Product {
   usage?: string;
   images: string[];
   video?: string;
+  rating?: number;
+  reviewCount?: number;
   beforeAfter: {
     before: string;
     after: string;
@@ -134,6 +136,8 @@ const initialState: ProductsState = {
       tagline: "Premium Nutrition Booster",
       highlights: ["Better fruit set", "Bigger size", "Color & sweetness"],
       shortDesc: "Improves fruit quality and yield.",
+      rating: 4.9,
+      reviewCount: 150,
       longDesc: "Maximize your harvest quality and yield with Fruitamil, a scientifically formulated nutrition booster designed specifically for fruit-bearing and vegetable crops. This precision nutrition formula improves fruit setting and retention, enhances fruit size and uniformity, and intensifies both color and sweetness. Perfect for citrus, mango, grapes, tomatoes, and other fruiting and vegetable crops, Fruitamil helps you achieve premium, marketable produce that commands better prices. Apply 5-10 mL per liter during fruit-setting and development stages for exceptional results.",
       longDescUrdu: "فروٹامل کے ساتھ اپنی فصل کے معیار اور پیداوار کو زیادہ سے زیادہ بنائیں، یہ سائنسی طور پر تیار کردہ غذائی بوسٹر خاص طور پر پھل دار فصلوں اور سبزیوں کے لیے ڈیزائن کیا گیا ہے۔ یہ درست غذائیت کا فارمولا پھلوں کی سیٹنگ اور برقراری کو بہتر بناتا ہے، پھلوں کا سائز اور یکسانیت بڑھاتا ہے، اور رنگ اور مٹھاس دونوں کو تیز کرتا ہے۔ سٹرس، آم، انگور، ٹماٹر، اور دیگر پھل دار فصلوں اور سبزیوں کے لیے بہترین، فروٹامل آپ کو پریمیم، قابل فروخت پیداوار حاصل کرنے میں مدد کرتا ہے جو بہتر قیمتوں کا مطالبہ کرتی ہے۔ پھل سیٹنگ اور نشوونما کے مراحل میں 5-10 ملی لٹر فی لٹر لگائیں اور غیر معمولی نتائج حاصل کریں۔",
       usage: "Mix 5-10 mL per liter of water. Apply from fruit setting stage, repeat every 20 days. Continue applications until 2 weeks before harvest for optimal results.",
