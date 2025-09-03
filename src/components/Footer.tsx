@@ -49,8 +49,7 @@ const Footer = () => {
               </span>
             </div>
             <p className="text-muted-foreground mb-4 max-w-md">
-              Premium organic plant care solutions that are chemical-free, safe for your family, 
-              and environmentally responsible. Growing naturally, growing better.
+              {t('footerDescription')}
             </p>
             <p className="text-sm text-primary font-medium">
               {t('tagline')}

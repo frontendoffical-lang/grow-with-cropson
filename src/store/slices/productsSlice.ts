@@ -10,8 +10,10 @@ export interface Product {
   id: string;
   name: string;
   tagline: string;
+  taglineUrdu?: string;
   highlights: string[];
   shortDesc: string;
+  shortDescUrdu?: string;
   longDesc?: string;
   longDescUrdu?: string;
   usage?: string;

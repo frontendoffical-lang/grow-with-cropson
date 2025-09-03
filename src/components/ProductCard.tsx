@@ -70,10 +70,10 @@ const ProductCard = ({ product, className }: ProductCardProps) => {
             {product.name}
           </h3>
           <p className="text-primary font-medium text-sm mb-2">
-            {product.tagline}
+            {i18n.language === 'ur' && product.taglineUrdu ? product.taglineUrdu : product.tagline}
           </p>
           <p className="text-muted-foreground text-sm line-clamp-2">
-            {product.shortDesc}
+            {i18n.language === 'ur' && product.shortDescUrdu ? product.shortDescUrdu : product.shortDesc}
           </p>
         </div>
 

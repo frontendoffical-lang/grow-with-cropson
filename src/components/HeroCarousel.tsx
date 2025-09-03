@@ -16,7 +16,7 @@ import fruitamilHero from '@/assets/fruitmail.png';
 import herbalShieldHero from '@/assets/herbal-shield.png';
 
 const HeroCarousel = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const dispatch = useAppDispatch();
   const products = useAppSelector(selectAllProducts);
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -105,11 +105,11 @@ const HeroCarousel = () => {
                     </h1>
                     
                     <p className="text-xl md:text-2xl font-medium text-accent mb-6">
-                      {product.tagline}
+                      {i18n.language === 'ur' && product.taglineUrdu ? product.taglineUrdu : product.tagline}
                     </p>
                     
                     <p className="text-lg md:text-xl text-white/90 mb-8 max-w-lg line-clamp-2">
-                      {product.longDesc}
+                      {i18n.language === 'ur' && product.longDescUrdu ? product.longDescUrdu : product.longDesc}
                     </p>
 
                     {/* Action Buttons */}
