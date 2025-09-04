@@ -163,8 +163,11 @@ const initialState: ProductsState = {
       id: "fruitamil",
       name: "Fruitamil",
       tagline: "Premium Nutrition Booster",
+      taglineUrdu: "پریمیم نیوٹریشن بوسٹر",
       highlights: ["Better fruit set", "Bigger size", "Color & sweetness"],
+      highlightsUrdu: ["بہتر پھل سیٹنگ", "بڑا سائز", "رنگ اور مٹھاس"],
       shortDesc: "Improves fruit quality and yield.",
+      shortDescUrdu: "پھلوں کے معیار اور پیداوار میں بہتری۔",
       rating: 4.9,
       reviewCount: 150,
       longDesc: "Maximize your harvest quality and yield with Fruitamil, a scientifically formulated nutrition booster designed specifically for fruit-bearing and vegetable crops. This precision nutrition formula improves fruit setting and retention, enhances fruit size and uniformity, and intensifies both color and sweetness. Perfect for citrus, mango, grapes, tomatoes, and other fruiting and vegetable crops, Fruitamil helps you achieve premium, marketable produce that commands better prices. Apply 5-10 mL per liter during fruit-setting and development stages for exceptional results.",
@@ -195,6 +198,14 @@ const initialState: ProductsState = {
         "Reduces fruit cracking and splitting",
         "Improves uniform fruit coloring"
       ],
+      advantagesUrdu: [
+        "پھلوں کے سائز میں 35% تک اضافہ",
+        "پھل سیٹ کی شرح میں 45% بہتری",
+        "قدرتی مٹھاس اور ذائقہ میں اضافہ",
+        "پھلوں کی زندگی میں 25% اضافہ",
+        "پھلوں کا پھٹنا اور چٹخنا کم کرتا ہے",
+        "یکساں پھلوں کے رنگ میں بہتری"
+      ],
       specifications: {
         "Active Ingredients": "Calcium, Potassium, Boron, Natural Enzymes",
         "NPK Ratio": "1-5-8",
@@ -208,8 +219,11 @@ const initialState: ProductsState = {
       id: "herbal-shield",
       name: "Organic Herbal Shield",
       tagline: "Natural Crop Protection",
+      taglineUrdu: "قدرتی فصل کی حفاظت",
       highlights: ["Plant-based", "Safe for edibles", "Eco-friendly"],
+      highlightsUrdu: ["پودوں پر مبنی", "کھانے کے لیے محفوظ", "ماحول دوست"],
       shortDesc: "Keeps pests away without chemicals.",
+      shortDescUrdu: "کیمیکل کے بغیر کیڑوں کو دور رکھتا ہے۔",
       longDesc: "Protect your crops the natural way with Herbal Shield, an organic plant-extract-based pesticide that delivers powerful pest control without harmful chemicals. This eco-friendly solution effectively repels aphids, thrips, whiteflies, and caterpillars while also providing natural fungicide protection. Safe for humans, animals, and beneficial pollinators, Herbal Shield is perfect for fruits, vegetables, ornamentals, and field crops. Simply mix 5-10 mL per liter of water and spray for comprehensive crop protection that won't harm the environment.",
       longDescUrdu: "ہربل شیلڈ کے ساتھ اپنی فصلوں کو قدرتی طریقے سے محفوظ رکھیں، یہ پودوں کے عرق پر مبنی نامیاتی کیڑے مار دوا ہے جو نقصان دہ کیمیکلز کے بغیر طاقتور کیڑے مکوڑوں کا کنٹرول فراہم کرتا ہے۔ یہ ماحول دوست حل مؤثر طریقے سے شپش، تھرپس، سفید مکھی، اور کیٹرپلر کو بھگاتا ہے اور قدرتی فنجی سائیڈ کی حفاظت بھی فراہم کرتا ہے۔ انسانوں، جانوروں، اور مفید پولینیٹرز کے لیے محفوظ، ہربل شیلڈ پھلوں، سبزیوں، آرائشی پودوں، اور کھیتی کی فصلوں کے لیے بہترین ہے۔ صرف 5-10 ملی لٹر فی لٹر پانی میں ملا کر چھڑکیں اور جامع فصل تحفظ حاصل کریں جو ماحول کو نقصان نہیں پہنچائے گا۔",
       usage: "Mix 5-10 mL per liter of water. Spray in early morning or evening, repeat weekly or as needed. Ensure complete coverage of plant surfaces including undersides of leaves.",
@@ -237,6 +251,14 @@ const initialState: ProductsState = {
         "Biodegradable with zero environmental impact",
         "Can be used up to day of harvest",
         "Improves plant natural defense mechanisms"
+      ],
+      advantagesUrdu: [
+        "15+ عام باغی کیڑوں کو قدرتی طریقے سے کنٹرول کرتا ہے",
+        "بچوں، پالتو جانوروں، اور مفید کیڑوں کے لیے محفوظ",
+        "فصل کٹنے سے پہلے کوئی وقفہ درکار نہیں",
+        "حیاتیاتی طور پر قابل تحلیل، ماحول پر صفر اثرات",
+        "فصل کٹنے کے دن تک استعمال کیا جا سکتا ہے",
+        "پودوں کے قدرتی دفاعی نظام میں بہتری"
       ],
       specifications: {
         "Active Ingredients": "Neem Oil, Peppermint Oil, Garlic Extract, Natural Surfactants",
