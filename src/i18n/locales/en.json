@@ -23,7 +23,13 @@
     "viewDetails": "View Details",
     "sendRTQ": "Send RTQ",
     "continueShopping": "Continue Shopping",
-    "clearCart": "Clear Cart"
+   "clearCart": "Clear Cart"
+  },
+  "home": {
+    "cta": {
+      "shopNow": "Shop Now",
+      "getInTouch": "Get in Touch"
+    }
   },
   "product": {
     "availableVolumes": "Available Volumes",

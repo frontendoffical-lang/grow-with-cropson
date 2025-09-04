@@ -23,7 +23,13 @@
     "viewDetails": "تفصیلات",
     "sendRTQ": "RTQ بھیجیں",
     "continueShopping": "خریداری جاری رکھیں",
-    "clearCart": "کارٹ خالی کریں"
+   "clearCart": "کارٹ خالی کریں"
+  },
+  "home": {
+    "cta": {
+      "shopNow": "اب خریداری کریں",
+      "getInTouch": "رابطہ کریں"
+    }
   },
   "product": {
     "availableVolumes": "دستیاب حجم",
