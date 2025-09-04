@@ -4,10 +4,11 @@ import { CheckCircle, Leaf, Shield, Award, Heart, Zap, Target } from 'lucide-rea
 
 interface AdvantagesSectionProps {
   advantages: string[];
+  product?: any;
 }
 
-const AdvantagesSection = ({ advantages }: AdvantagesSectionProps) => {
-  const { t } = useTranslation();
+const AdvantagesSection = ({ advantages, product }: AdvantagesSectionProps) => {
+  const { t, i18n } = useTranslation();
 
   const getIcon = (index: number) => {
     const icons = [CheckCircle, Leaf, Shield, Award, Heart, Zap, Target];
@@ -27,7 +28,7 @@ const AdvantagesSection = ({ advantages }: AdvantagesSectionProps) => {
       </div>
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        {advantages.map((advantage, index) => (
+        {(i18n.language === 'ur' && product.advantagesUrdu ? product.advantagesUrdu : advantages).map((advantage, index) => (
           <Card key={index} className="border-primary/10 hover:border-primary/30 transition-colors">
             <CardContent className="p-6">
               <div className="flex items-start space-x-4">

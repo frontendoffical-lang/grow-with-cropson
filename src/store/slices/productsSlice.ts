@@ -12,6 +12,7 @@ export interface Product {
   tagline: string;
   taglineUrdu?: string;
   highlights: string[];
+  highlightsUrdu?: string[];
   shortDesc: string;
   shortDescUrdu?: string;
   longDesc?: string;
@@ -38,6 +39,7 @@ export interface Product {
     hidden?: boolean;
   }>;
   advantages?: string[];
+  advantagesUrdu?: string[];
   specifications?: Record<string, string>;
 }
 
@@ -53,8 +55,11 @@ const initialState: ProductsState = {
       id: "mr-flowers",
       name: "Mr. Flowers",
       tagline: "Flowering Stimulant",
-      highlights: ["Enhances flowering", "Reduces flower drop", "Extends bloom life","improve folwer shelf life","higher production"],
+      taglineUrdu: "پھولوں کا متحرک",
+      highlights: ["Enhances flowering", "Reduces flower drop", "Extends bloom life","improve flower shelf life","higher production"],
+      highlightsUrdu: ["پھولوں میں اضافہ", "پھولوں کا گرنا کم کرتا ہے", "کھلنے کی مدت بڑھاتا ہے", "پھولوں کی زندگی میں بہتری", "زیادہ پیداوار"],
       shortDesc: "Helps plants grow more flowers that last longer.",
+      shortDescUrdu: "پودوں کو زیادہ پھول اگانے میں مدد کرتا ہے جو زیادہ دیر تک ٹکتے ہیں۔",
       longDesc: "Transform your garden into a blooming paradise with Mr. Flowers, a natural flowering stimulant that promotes profuse, long-lasting blooms. This gentle yet effective formula reduces premature flower drop, extends blooming periods, and encourages healthy, uniform flower development. Specially designed for ornamental and flowering plants like roses, marigolds, and jasmine, Mr. Flowers ensures your garden stays vibrant and colorful for longer. Mix 5-10 mL per liter and apply during pre-flowering and flowering stages for spectacular results.",
       longDescUrdu: "مسٹر فلاورز کے ساتھ اپنے باغ کو کھلتے پھولوں کی جنت میں تبدیل کر دیں، یہ قدرتی پھولوں کا محرک ہے جو بھرپور، طویل المیعاد کھلنے کو فروغ دیتا ہے۔ یہ نرم لیکن مؤثر فارمولا قبل از وقت پھولوں کا گرنا کم کرتا ہے، کھلنے کی مدت بڑھاتا ہے، اور صحت مند، یکسان پھولوں کی نشوونما کی حوصلہ افزائی کرتا ہے۔ خاص طور پر آرائشی اور پھولوں کے پودوں جیسے گلاب، گیندا، اور چمیلی کے لیے ڈیزائن کیا گیا، مسٹر فلاورز یقینی بناتا ہے کہ آپ کا باغ زیادہ دیر تک جیورنت اور رنگ برنگا رہے۔ 5-10 ملی لٹر فی لٹر ملا کر پھول آنے سے پہلے اور پھول آنے کے مراحل میں لگائیں اور شاندار نتائج حاصل کریں۔",
       usage: "Mix 5-10 mL per liter of water. Apply during pre-flowering and flowering stages. For best results, apply in early morning or late evening when temperatures are cooler.",
@@ -83,6 +88,14 @@ const initialState: ProductsState = {
         "Safe for beneficial insects and pollinators",
         "Improves overall plant immunity"
       ],
+      advantagesUrdu: [
+        "پھولوں کی تعداد میں 60% تک اضافہ",
+        "کھلنے کی زندگی میں 40% اضافہ",
+        "پھولوں کے سائز اور رنگ کی شدت میں اضافہ",
+        "100% قدرتی اور حیاتیاتی طور پر قابل تحلیل فارمولا",
+        "مفید کیڑوں اور پولن کرنے والوں کے لیے محفوظ",
+        "پودوں کی مجموعی قوت مدافعت میں بہتری"
+      ],
       specifications: {
         "Active Ingredients": "Seaweed Extract, Amino Acids, Organic Minerals",
         "NPK Ratio": "2-4-6",
@@ -96,8 +109,11 @@ const initialState: ProductsState = {
       id: "dr-green",
       name: "Dr. Green",
       tagline: "Plant Hormonal Therapy",
+      taglineUrdu: "پودوں کی ہارمونل تھراپی",
       highlights: ["Lush green growth", "Boosts vigor", "Enhances root growth"],
+      highlightsUrdu: ["سرسبز و شاداب بڑھوار", "طاقت میں اضافہ", "جڑوں کی بڑھوار میں بہتری"],
       shortDesc: "Supports natural growth and strong roots.",
+      shortDescUrdu: "قدرتی بڑھوار اور مضبوط جڑوں میں مدد کرتا ہے۔",
       longDesc: "Give your plants the boost they need with Dr. Green, a natural hormonal formula that stimulates robust growth and vibrant health. This plant-extract-based solution enhances chlorophyll production for lush green foliage, promotes stronger root development, and helps plants recover from environmental stress. Ideal for all crops during early growth stages, Dr. Green transforms weak, stressed plants into vigorous, healthy specimens. Mix 10 mL per liter of water and watch your plants develop rich green canopies and stronger root systems.",
       longDescUrdu: "ڈاکٹر گرین کے ساتھ اپنے پودوں کو وہ طاقت دیں جس کی انہیں ضرورت ہے، یہ قدرتی ہارمونل فارمولا ہے جو مضبوط نشرونما اور شاندار صحت کو متحرک کرتا ہے۔ یہ پودوں کے عرق پر مبنی حل کلوروفل کی پیداوار بڑھاتا ہے، مضبوط جڑوں کی نشرونما کو فروغ دیتا ہے، اور پودوں کو ماحولیاتی دباؤ سے بحالی میں مدد کرتا ہے۔ ابتدائی نشرونما کے مرحلے میں تمام فصلوں کے لیے مثالی، ڈاکٹر گرین کمزور، دباؤ زدہ پودوں کو طاقتور، صحت مند نشرونما میں تبدیل کر دیتا ہے۔ 10 ملی لٹر فی لٹر پانی میں ملائیں اور اپنے پودوں کو بھرپور سبز چھتری اور مضبوط جڑوں کا نظام تیار کرتے ہوئے دیکھیں۔",
       usage: "Mix 10 mL per liter of water. Apply every 10-14 days during growing season. Apply as soil drench for root development or foliar spray for quick absorption.",
@@ -125,6 +141,14 @@ const initialState: ProductsState = {
         "Improves plant stress tolerance",
         "Accelerates overall growth rate by 50%",
         "Strengthens plant immunity against diseases"
+      ],
+      advantagesUrdu: [
+        "جڑوں کی نشوونما میں 70% تیزی",
+        "پتوں کی کثافت اور سائز میں اضافہ",
+        "سبز پتوں کے لیے کلوروفل کی پیداوار بڑھاتا ہے",
+        "پودوں کی دباؤ برداشت کرنے کی صلاحیت بہتر بناتا ہے",
+        "مجموعی نشوونما کی رفتار میں 50% اضافہ",
+        "پودوں کی بیماریوں کے خلاف قوت مدافعت مضبوط بناتا ہے"
       ],
       specifications: {
         "Active Ingredients": "Plant Hormones, Chelated Micronutrients, Organic Acids",

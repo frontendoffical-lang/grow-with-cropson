@@ -88,10 +88,10 @@ const ProductDetail = () => {
                 {product.name}
               </h1>
               <p className="text-2xl text-primary font-medium mb-6">
-                {product.tagline}
+                {i18n.language === 'ur' && product.taglineUrdu ? product.taglineUrdu : product.tagline}
               </p>
               <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-                {product.shortDesc}
+                {i18n.language === 'ur' && product.shortDescUrdu ? product.shortDescUrdu : product.shortDesc}
               </p>
               
               {/* Rating Display */}
@@ -133,7 +133,7 @@ const ProductDetail = () => {
               </CardHeader>
               <CardContent>
                 <div className="grid grid-cols-1 gap-3">
-                  {product.highlights.map((highlight, index) => (
+                  {(i18n.language === 'ur' && product.highlightsUrdu ? product.highlightsUrdu : product.highlights).map((highlight, index) => (
                     <div key={index} className="flex items-center space-x-3">
                       <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
                       <span className="text-foreground">{highlight}</span>
@@ -192,7 +192,7 @@ const ProductDetail = () => {
         {/* Advantages Section */}
         {product.advantages && (
           <div className="mb-16">
-            <AdvantagesSection advantages={product.advantages} />
+            <AdvantagesSection advantages={product.advantages} product={product} />
           </div>
         )}
 
@@ -250,8 +250,8 @@ const ProductDetail = () => {
                       {Object.entries(product.specifications).map(([key, value]) => (
                         <div key={key} className="flex flex-col space-y-2 p-4 border rounded-lg hover:border-primary/30 transition-colors">
                           <dt className="text-sm font-medium text-muted-foreground uppercase tracking-wider">
-                            {i18n.language === 'ur' && t(`productDetail.specifications.${key}`) !== `productDetail.specifications.${key}` 
-                              ? t(`productDetail.specifications.${key}`) 
+                            {i18n.language === 'ur' && t(`productDetail.specificationLabels.${key}`) !== `productDetail.specificationLabels.${key}` 
+                              ? t(`productDetail.specificationLabels.${key}`) 
                               : key}
                           </dt>
                           <dd className="text-lg font-semibold text-foreground">{value}</dd>

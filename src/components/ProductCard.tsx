@@ -92,7 +92,7 @@ const ProductCard = ({ product, className }: ProductCardProps) => {
 
         {/* Highlights */}
         <div className="space-y-1">
-          {product.highlights.slice(0, 3).map((highlight, index) => (
+          {(i18n.language === 'ur' && product.highlightsUrdu ? product.highlightsUrdu : product.highlights).slice(0, 3).map((highlight, index) => (
             <div key={index} className="flex items-center text-sm text-muted-foreground">
               <div className="w-1.5 h-1.5 bg-success rounded-full mr-2 flex-shrink-0" />
               <span>{highlight}</span>
