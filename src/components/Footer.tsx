@@ -42,9 +42,9 @@ const Footer = () => {
           <div className="lg:col-span-2">
             <div className="flex items-center mb-4">
               <img 
-                src="/lovable-uploads/fd95b674-1882-46a5-8677-7c62a12702bb.png" 
+                src="/lovable-uploads/b9fbd769-4d28-4bb3-9a0b-0811e483cf11.png" 
                 alt="CROPSEN Logo" 
-                className="w-16 h-16 object-contain"
+                className="w-20 h-20 object-contain"
               />
             </div>
             <p className="text-muted-foreground mb-4 max-w-md">

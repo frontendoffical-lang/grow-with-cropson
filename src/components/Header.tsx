@@ -40,7 +40,7 @@ const Header = () => {
           {/* Logo */}
           <div className="flex items-center">
             <Link to="/" className="flex items-center">
-              <img src="/lovable-uploads/fd95b674-1882-46a5-8677-7c62a12702bb.png" alt="CROPSEN Logo" className="w-auto h-full object-cover " />
+              <img src="/lovable-uploads/b9fbd769-4d28-4bb3-9a0b-0811e483cf11.png" alt="CROPSEN Logo" className="w-auto h-12 object-contain" />
             </Link>
           </div>
 
