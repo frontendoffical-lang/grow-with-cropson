@@ -40,15 +40,12 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Brand */}
           <div className="lg:col-span-2">
-            <div className="flex items-center space-x-2 mb-4">
+            <div className="flex items-center mb-4">
               <img 
                 src="/lovable-uploads/fd95b674-1882-46a5-8677-7c62a12702bb.png" 
                 alt="CROPSEN Logo" 
-                className="w-10 h-10 object-contain"
+                className="w-16 h-16 object-contain"
               />
-              <span className="font-heading font-bold text-2xl text-primary">
-                {t('brand')}
-              </span>
             </div>
             <p className="text-muted-foreground mb-4 max-w-md">
               {t('footerDescription')}
