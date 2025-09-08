@@ -238,48 +238,6 @@ Message: ${formData.message}
           </div>
         </section>
 
-        {/* Distributorship Section */}
-        <section className="py-10 bg-gradient-to-br from-success-light to-primary-light">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-4">
-                {t('contact.distributorship.title')}
-              </h2>
-              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                {t('contact.distributorship.subtitle')}
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-              {[
-                { key: 'training', icon: '🎓' },
-                { key: 'support', icon: '🤝' },
-                { key: 'margins', icon: '💰' },
-                { key: 'territory', icon: '🗺️' }
-              ].map(({ key, icon }) => (
-                <div key={key} className="bg-background/80 backdrop-blur-sm p-6 rounded-xl text-center">
-                  <div className="text-4xl mb-4">{icon}</div>
-                  <h3 className="font-heading font-semibold text-foreground mb-2">
-                    {t(`contact.distributorship.benefits.${key}`)}
-                  </h3>
-                </div>
-              ))}
-            </div>
-
-            <div className="text-center">
-              <ButtonOrganic 
-                size="lg" 
-                onClick={() => {
-                  const message = t('contact.distributorship.applyMessage');
-                  const whatsappUrl = `https://wa.me/923001234567?text=${encodeURIComponent(message)}`;
-                  window.open(whatsappUrl, '_blank');
-                }}
-              >
-                {t('contact.distributorship.apply')}
-              </ButtonOrganic>
-            </div>
-          </div>
-        </section>
       </main>
 
       <Footer />
