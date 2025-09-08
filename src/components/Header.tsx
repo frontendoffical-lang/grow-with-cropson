@@ -35,9 +35,11 @@ const Header = () => {
           {/* Logo */}
           <div className="flex items-center">
             <Link to="/" className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-gradient-to-r from-primary to-success rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">C</span>
-              </div>
+              <img 
+                src="/lovable-uploads/fd95b674-1882-46a5-8677-7c62a12702bb.png" 
+                alt="CROPSEN Logo" 
+                className="w-10 h-10 object-contain"
+              />
               <span className="font-heading font-bold text-xl text-primary">
                 {t('brand')}
               </span>

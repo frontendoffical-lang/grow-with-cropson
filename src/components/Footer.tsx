@@ -41,9 +41,11 @@ const Footer = () => {
           {/* Brand */}
           <div className="lg:col-span-2">
             <div className="flex items-center space-x-2 mb-4">
-              <div className="w-10 h-10 bg-gradient-to-r from-primary to-success rounded-lg flex items-center justify-center">
-                <Leaf className="w-6 h-6 text-white" />
-              </div>
+              <img 
+                src="/lovable-uploads/fd95b674-1882-46a5-8677-7c62a12702bb.png" 
+                alt="CROPSEN Logo" 
+                className="w-10 h-10 object-contain"
+              />
               <span className="font-heading font-bold text-2xl text-primary">
                 {t('brand')}
               </span>
